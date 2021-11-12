@@ -1,0 +1,170 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Styles/WhiteInfoText.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Styles/Button.tres" type="StyleBox" id=2]
+[ext_resource path="res://Styles/ButtonNormal.tres" type="StyleBox" id=3]
+[ext_resource path="res://Styles/ButtonPress.tres" type="StyleBox" id=4]
+[ext_resource path="res://Sprites/Effects/fire-matrix.png" type="Texture" id=5]
+[ext_resource path="res://CloseButton.tscn" type="PackedScene" id=6]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 0, 0, 1 )
+border_color = Color( 0.898039, 0.0196078, 0.0196078, 1 )
+
+[sub_resource type="ImageTexture" id=2]
+
+[sub_resource type="ImageTexture" id=3]
+
+[sub_resource type="ImageTexture" id=4]
+
+[sub_resource type="ImageTexture" id=5]
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 550, 100 )
+modulate_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 550, 100 )
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 550, 100 )
+
+[sub_resource type="StyleBoxTexture" id=9]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 550, 100 )
+
+[sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 550, 100 )
+
+[node name="GeneralOptionsHUD" type="Area2D"]
+pause_mode = 2
+z_index = 1
+
+[node name="Background" type="Button" parent="."]
+pause_mode = 2
+margin_left = 30.0
+margin_top = 66.0
+margin_right = 1890.0
+margin_bottom = 1054.0
+custom_styles/disabled = ExtResource( 3 )
+disabled = true
+
+[node name="GeneralClose" type="Button" parent="." instance=ExtResource( 6 )]
+pause_mode = 2
+margin_left = 1702.03
+margin_top = 66.1004
+margin_right = 1890.03
+margin_bottom = 181.1
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = SubResource( 1 )
+
+[node name="VolumeSlider" type="HSlider" parent="."]
+margin_left = 775.0
+margin_top = 236.712
+margin_right = 1575.0
+margin_bottom = 336.712
+custom_icons/tick = SubResource( 2 )
+custom_icons/grabber_disabled = SubResource( 3 )
+custom_icons/grabber_highlight = SubResource( 4 )
+custom_icons/grabber = SubResource( 5 )
+custom_styles/slider = SubResource( 6 )
+custom_styles/grabber_area_highlight = SubResource( 7 )
+custom_styles/grabber_area = SubResource( 8 )
+value = 100.0
+ticks_on_borders = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VolumeInfoText" type="Label" parent="."]
+margin_left = 100.0
+margin_top = 235.0
+margin_right = 745.0
+margin_bottom = 331.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.898039, 0.898039, 0.898039, 1 )
+text = "Master Volume"
+align = 2
+
+[node name="VolumeValue" type="Label" parent="."]
+margin_left = 1585.0
+margin_top = 234.576
+margin_right = 1833.0
+margin_bottom = 330.576
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.898039, 0.898039, 0.898039, 1 )
+text = "100%"
+
+[node name="ResolutionSlider" type="HSlider" parent="."]
+margin_left = 775.0
+margin_top = 400.0
+margin_right = 1575.0
+margin_bottom = 500.0
+custom_icons/tick = SubResource( 2 )
+custom_icons/grabber_disabled = SubResource( 3 )
+custom_icons/grabber_highlight = SubResource( 4 )
+custom_icons/grabber = SubResource( 5 )
+custom_styles/slider = SubResource( 6 )
+custom_styles/grabber_area_highlight = SubResource( 9 )
+custom_styles/grabber_area = SubResource( 8 )
+min_value = 5.0
+value = 100.0
+ticks_on_borders = true
+
+[node name="ResolutionInfoText" type="Label" parent="."]
+margin_left = 100.0
+margin_top = 400.0
+margin_right = 745.0
+margin_bottom = 496.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.898039, 0.898039, 0.898039, 1 )
+text = "Render Resolution"
+align = 2
+
+[node name="ResolutionValue" type="Label" parent="."]
+margin_left = 1585.0
+margin_top = 400.0
+margin_right = 1833.0
+margin_bottom = 496.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.898039, 0.898039, 0.898039, 1 )
+text = "100%"
+
+[node name="FPS" type="Label" parent="."]
+margin_left = 100.0
+margin_top = 565.0
+margin_right = 745.0
+margin_bottom = 661.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.898039, 0.898039, 0.898039, 1 )
+text = "FPS Display"
+align = 2
+
+[node name="FPSSlider" type="HSlider" parent="."]
+margin_left = 775.0
+margin_top = 565.0
+margin_right = 1575.0
+margin_bottom = 665.0
+custom_icons/tick = SubResource( 2 )
+custom_icons/grabber_disabled = SubResource( 3 )
+custom_icons/grabber_highlight = SubResource( 4 )
+custom_icons/grabber = SubResource( 5 )
+custom_styles/slider = SubResource( 6 )
+custom_styles/grabber_area_highlight = SubResource( 10 )
+custom_styles/grabber_area = SubResource( 8 )
+value = 100.0
+ticks_on_borders = true
+
+[node name="FPSValue" type="Label" parent="."]
+margin_left = 1585.0
+margin_top = 565.0
+margin_right = 1833.0
+margin_bottom = 661.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.898039, 0.898039, 0.898039, 1 )
+text = "100%"

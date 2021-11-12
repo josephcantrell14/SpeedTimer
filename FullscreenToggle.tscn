@@ -1,0 +1,56 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Styles/ButtonFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Styles/WhiteInfoText.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Sprites/Icons/Joy.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Icons/glow-icon.png" type="Texture" id=4]
+
+[sub_resource type="ImageTexture" id=1]
+
+[sub_resource type="ImageTexture" id=2]
+
+[sub_resource type="ImageTexture" id=3]
+
+[sub_resource type="ImageTexture" id=4]
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 40, 40 )
+
+[node name="Fullscreen" type="Area2D"]
+
+[node name="Fullscreen" type="Label" parent="."]
+margin_left = 100.0
+margin_top = 894.234
+margin_right = 745.0
+margin_bottom = 990.234
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.898039, 0.898039, 0.898039, 1 )
+text = "Fullscreen"
+align = 2
+
+[node name="FullscreenCheckboxBG" type="TextureRect" parent="."]
+margin_left = 777.702
+margin_top = 868.224
+margin_right = 927.702
+margin_bottom = 1018.22
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FullscreenCheckbox" type="CheckBox" parent="."]
+margin_left = 804.29
+margin_top = 891.521
+margin_right = 904.29
+margin_bottom = 999.521
+custom_icons/radio_checked = SubResource( 1 )
+custom_icons/checked = SubResource( 2 )
+custom_icons/radio_unchecked = SubResource( 3 )
+custom_icons/unchecked = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_fonts/font = ExtResource( 1 )
+pressed = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

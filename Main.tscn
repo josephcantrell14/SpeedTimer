@@ -1,0 +1,1077 @@
+[gd_scene load_steps=62 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://HUD.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/Effects/fire-matrix.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Icons/play.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Icons/glow-icon.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Icons/Joy.png" type="Texture" id=6]
+[ext_resource path="res://CloseButton.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Styles/ButtonFont.tres" type="DynamicFont" id=8]
+[ext_resource path="res://Styles/ButtonNormal.tres" type="StyleBox" id=9]
+[ext_resource path="res://Stopwatch.gd" type="Script" id=10]
+[ext_resource path="res://Fonts/roboto.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://Sounds/metronome.wav" type="AudioStream" id=12]
+[ext_resource path="res://Sounds/piano-slow-high.wav" type="AudioStream" id=13]
+
+[sub_resource type="DynamicFont" id=1]
+size = 90
+outline_color = Color( 0.921569, 0.921569, 0.921569, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 200
+outline_size = 4
+outline_color = Color( 0.745098, 0.745098, 0.745098, 1 )
+font_data = ExtResource( 11 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 1, 1, 0 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 1, 1, 1, 0 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 60
+outline_color = Color( 0.921569, 0.921569, 0.921569, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 120
+outline_color = Color( 0.921569, 0.921569, 0.921569, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 11 )
+
+[sub_resource type="Theme" id=8]
+
+[sub_resource type="Theme" id=9]
+
+[sub_resource type="DynamicFontData" id=12]
+font_path = "res://Fonts/roboto.ttf"
+
+[sub_resource type="DynamicFont" id=13]
+size = 44
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 12 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.0313726, 0.0313726, 0.0666667, 1 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 0.866667, 0.866667, 0.866667, 1 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color( 0.866667, 0.866667, 0.866667, 1 )
+
+[sub_resource type="DynamicFontData" id=15]
+font_path = "res://Fonts/roboto.ttf"
+
+[sub_resource type="DynamicFont" id=16]
+size = 75
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 15 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.0313726, 0.0313726, 0.0666667, 1 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 0.866667, 0.866667, 0.866667, 1 )
+
+[sub_resource type="DynamicFontData" id=18]
+font_path = "res://Fonts/roboto.ttf"
+
+[sub_resource type="DynamicFont" id=19]
+size = 60
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 18 )
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.0313726, 0.0313726, 0.0666667, 1 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 0.866667, 0.866667, 0.866667, 1 )
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id=20]
+bg_color = Color( 0.0313726, 0.0313726, 0.0666667, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 1, 1, 1, 1 )
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id=21]
+bg_color = Color( 1, 1, 1, 1 )
+border_color = Color( 0.898039, 0.0196078, 0.0196078, 1 )
+
+[sub_resource type="ImageTexture" id=22]
+
+[sub_resource type="ImageTexture" id=23]
+
+[sub_resource type="ImageTexture" id=24]
+
+[sub_resource type="ImageTexture" id=25]
+
+[sub_resource type="StyleBoxTexture" id=26]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 550, 100 )
+modulate_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxTexture" id=27]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 550, 100 )
+
+[sub_resource type="StyleBoxTexture" id=28]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 550, 100 )
+
+[sub_resource type="DynamicFont" id=29]
+size = 44
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 11 )
+
+[sub_resource type="StyleBoxTexture" id=30]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 550, 100 )
+
+[sub_resource type="StyleBoxTexture" id=31]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 550, 100 )
+
+[sub_resource type="DynamicFont" id=32]
+size = 24
+font_data = ExtResource( 11 )
+
+[sub_resource type="Theme" id=33]
+default_font = SubResource( 32 )
+
+[sub_resource type="DynamicFont" id=34]
+size = 24
+use_mipmaps = true
+use_filter = true
+extra_spacing_top = 5
+extra_spacing_bottom = 6
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=35]
+size = 22
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=36]
+size = 18
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 11 )
+
+[sub_resource type="StyleBoxFlat" id=49]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=50]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="DynamicFont" id=39]
+size = 18
+font_data = ExtResource( 11 )
+
+[sub_resource type="StyleBoxFlat" id=40]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=41]
+bg_color = Color( 0.160784, 0.160784, 0.160784, 1 )
+
+[sub_resource type="StyleBoxFlat" id=42]
+bg_color = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
+
+[sub_resource type="Theme" id=51]
+Button/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = SubResource( 34 )
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = null
+Button/styles/normal = ExtResource( 9 )
+Button/styles/pressed = null
+Label/colors/font_color = Color( 1, 1, 1, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+Label/constants/line_spacing = 3
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/fonts/font = SubResource( 35 )
+Label/styles/normal = null
+LineEdit/colors/clear_button_color = Color( 0.88, 0.88, 0.88, 1 )
+LineEdit/colors/clear_button_color_pressed = Color( 1, 1, 1, 1 )
+LineEdit/colors/cursor_color = Color( 0.94, 0.94, 0.94, 1 )
+LineEdit/colors/font_color = Color( 0.898039, 0.898039, 0.898039, 1 )
+LineEdit/colors/font_color_selected = Color( 0, 0, 0, 1 )
+LineEdit/colors/font_color_uneditable = Color( 0.88, 0.88, 0.88, 0.5 )
+LineEdit/colors/selection_color = Color( 0.49, 0.49, 0.49, 1 )
+LineEdit/constants/minimum_spaces = 12
+LineEdit/fonts/font = SubResource( 36 )
+LineEdit/icons/clear = null
+LineEdit/styles/focus = SubResource( 49 )
+LineEdit/styles/normal = SubResource( 50 )
+LineEdit/styles/read_only = null
+Tree/colors/custom_button_font_highlight = Color( 0.94, 0.94, 0.94, 1 )
+Tree/colors/drop_position_color = Color( 1, 0.3, 0.2, 1 )
+Tree/colors/font_color = Color( 0.69, 0.69, 0.69, 1 )
+Tree/colors/font_color_selected = Color( 1, 1, 1, 1 )
+Tree/colors/guide_color = Color( 0, 0, 0, 0.1 )
+Tree/colors/relationship_line_color = Color( 0.27, 0.27, 0.27, 1 )
+Tree/colors/title_button_color = Color( 0.88, 0.88, 0.88, 1 )
+Tree/constants/button_margin = 4
+Tree/constants/draw_guides = 1
+Tree/constants/draw_relationship_lines = 0
+Tree/constants/hseparation = 4
+Tree/constants/item_margin = 12
+Tree/constants/scroll_border = 4
+Tree/constants/scroll_speed = 12
+Tree/constants/vseparation = 4
+Tree/fonts/font = SubResource( 39 )
+Tree/fonts/title_button_font = null
+Tree/icons/arrow = null
+Tree/icons/arrow_collapsed = null
+Tree/icons/checked = null
+Tree/icons/select_arrow = null
+Tree/icons/unchecked = null
+Tree/icons/updown = null
+Tree/styles/bg = SubResource( 40 )
+Tree/styles/bg_focus = null
+Tree/styles/button_pressed = null
+Tree/styles/cursor = null
+Tree/styles/cursor_unfocused = null
+Tree/styles/custom_button = null
+Tree/styles/custom_button_hover = null
+Tree/styles/custom_button_pressed = null
+Tree/styles/selected = SubResource( 41 )
+Tree/styles/selected_focus = null
+Tree/styles/title_button_hover = null
+Tree/styles/title_button_normal = null
+Tree/styles/title_button_pressed = null
+WindowDialog/colors/title_color = Color( 0, 0, 0, 1 )
+WindowDialog/constants/close_h_ofs = 18
+WindowDialog/constants/close_v_ofs = 18
+WindowDialog/constants/scaleborder_size = 4
+WindowDialog/constants/title_height = 20
+WindowDialog/fonts/title_font = null
+WindowDialog/icons/close = null
+WindowDialog/icons/close_highlight = null
+WindowDialog/styles/panel = SubResource( 42 )
+
+[sub_resource type="ImageTexture" id=44]
+
+[sub_resource type="ImageTexture" id=45]
+
+[sub_resource type="ImageTexture" id=46]
+
+[sub_resource type="ImageTexture" id=47]
+
+[sub_resource type="StyleBoxTexture" id=48]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 40, 40 )
+
+[node name="Main" type="Node"]
+pause_mode = 2
+script = ExtResource( 1 )
+
+[node name="Stopwatch" type="Node" parent="."]
+script = ExtResource( 10 )
+
+[node name="MetronomeSound" type="AudioStreamPlayer" parent="Stopwatch"]
+stream = ExtResource( 12 )
+volume_db = 14.0
+
+[node name="MainMenuCamera" type="Camera2D" parent="."]
+position = Vector2( 960, 540 )
+current = true
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="TimerSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+volume_db = -2.0
+
+[node name="HUD" type="CanvasLayer" parent="."]
+pause_mode = 2
+layer = 2
+script = ExtResource( 2 )
+
+[node name="Title" type="Label" parent="HUD" groups=["theme"]]
+margin_left = 419.0
+margin_top = 10.0
+margin_right = 1680.0
+margin_bottom = 130.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Speed Timer"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BG" type="Area2D" parent="HUD" groups=["theme"]]
+z_index = -1
+
+[node name="Sprite" type="Sprite" parent="HUD/BG"]
+position = Vector2( 956.595, 539.523 )
+
+[node name="Hours" type="LineEdit" parent="HUD" groups=["theme", "time"]]
+margin_left = 474.0
+margin_top = 378.0
+margin_right = 1074.0
+margin_bottom = 643.0
+custom_colors/selection_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+text = "0"
+max_length = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Minutes" type="LineEdit" parent="HUD" groups=["theme", "time"]]
+margin_left = 774.364
+margin_top = 378.142
+margin_right = 1374.36
+margin_bottom = 643.142
+custom_colors/selection_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/normal = SubResource( 3 )
+text = "0"
+max_length = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Seconds" type="LineEdit" parent="HUD" groups=["theme", "time"]]
+margin_left = 1074.0
+margin_top = 378.0
+margin_right = 1674.0
+margin_bottom = 643.0
+custom_colors/selection_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/normal = SubResource( 3 )
+text = "0"
+max_length = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Milliseconds" type="LineEdit" parent="HUD" groups=["theme", "time"]]
+margin_left = 1374.36
+margin_top = 378.142
+margin_right = 1974.36
+margin_bottom = 643.142
+custom_colors/selection_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/normal = SubResource( 3 )
+text = "0"
+max_length = 3
+caret_blink = true
+caret_blink_speed = 0.8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="h" type="Label" parent="HUD" groups=["theme"]]
+margin_left = 489.152
+margin_top = 574.113
+margin_right = 567.152
+margin_bottom = 733.113
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "h"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="m" type="Label" parent="HUD" groups=["theme"]]
+margin_left = 791.211
+margin_top = 574.113
+margin_right = 869.211
+margin_bottom = 733.113
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "m"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="s" type="Label" parent="HUD" groups=["theme"]]
+margin_left = 1089.7
+margin_top = 574.113
+margin_right = 1167.7
+margin_bottom = 733.113
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "s"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ms" type="Label" parent="HUD" groups=["theme"]]
+margin_left = 1380.35
+margin_top = 574.0
+margin_right = 1498.35
+margin_bottom = 733.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "ms"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Decimal" type="Label" parent="HUD" groups=["theme"]]
+margin_left = 1295.23
+margin_top = 456.26
+margin_right = 1373.23
+margin_bottom = 615.26
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 7 )
+text = "."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" type="Button" parent="HUD" groups=["theme"]]
+pause_mode = 2
+margin_left = 912.317
+margin_top = 831.545
+margin_right = 1052.32
+margin_bottom = 971.545
+rect_scale = Vector2( 1.7, 1.7 )
+focus_mode = 0
+theme = SubResource( 8 )
+enabled_focus_mode = 0
+icon = ExtResource( 4 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimerButton" type="Button" parent="HUD" groups=["theme"]]
+margin_left = 0.181957
+margin_top = 0.146944
+margin_right = 420.182
+margin_bottom = 160.147
+focus_neighbour_left = NodePath("../CustomButton")
+focus_neighbour_top = NodePath("../InstructionsButton")
+focus_neighbour_right = NodePath("../CustomButton")
+focus_neighbour_bottom = NodePath("../QuitButton")
+focus_next = NodePath("../CustomButton")
+focus_previous = NodePath("../CustomButton")
+theme = SubResource( 9 )
+custom_fonts/font = SubResource( 13 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/normal = ExtResource( 9 )
+text = "Timer"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StopwatchButton" type="Button" parent="HUD" groups=["theme"]]
+modulate = Color( 1, 1, 1, 0.5 )
+margin_left = 0.181957
+margin_top = 162.147
+margin_right = 420.182
+margin_bottom = 322.147
+focus_neighbour_left = NodePath("../CustomButton")
+focus_neighbour_top = NodePath("../InstructionsButton")
+focus_neighbour_right = NodePath("../CustomButton")
+focus_neighbour_bottom = NodePath("../QuitButton")
+focus_next = NodePath("../CustomButton")
+focus_previous = NodePath("../CustomButton")
+theme = SubResource( 9 )
+custom_fonts/font = SubResource( 13 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/normal = ExtResource( 9 )
+text = "Stopwatch"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ClearButton" type="Button" parent="HUD" groups=["theme"]]
+margin_left = 1596.0
+margin_top = 956.0
+margin_right = 1919.0
+margin_bottom = 1079.0
+focus_neighbour_left = NodePath("../CustomButton")
+focus_neighbour_top = NodePath("../InstructionsButton")
+focus_neighbour_right = NodePath("../CustomButton")
+focus_neighbour_bottom = NodePath("../QuitButton")
+focus_next = NodePath("../CustomButton")
+focus_previous = NodePath("../CustomButton")
+theme = SubResource( 9 )
+custom_fonts/font = SubResource( 13 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/normal = ExtResource( 9 )
+text = "Clear"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitButton" type="Button" parent="HUD" groups=["theme"]]
+margin_left = 1680.0
+margin_top = 1.0
+margin_right = 1919.0
+margin_bottom = 121.0
+theme = SubResource( 9 )
+custom_fonts/font = SubResource( 16 )
+custom_styles/hover = SubResource( 14 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/normal = ExtResource( 9 )
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionsButton" type="Button" parent="HUD" groups=["theme"]]
+margin_top = 953.0
+margin_right = 420.0
+margin_bottom = 1080.0
+theme = SubResource( 9 )
+custom_fonts/font = SubResource( 19 )
+custom_styles/hover = SubResource( 17 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/normal = ExtResource( 9 )
+text = "Options"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionsHUD" type="Area2D" parent="HUD"]
+pause_mode = 2
+visible = false
+z_index = 3
+
+[node name="Background" type="Button" parent="HUD/OptionsHUD" groups=["theme"]]
+pause_mode = 2
+margin_right = 1920.0
+margin_bottom = 1080.0
+custom_styles/disabled = SubResource( 20 )
+disabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GeneralClose" parent="HUD/OptionsHUD" groups=["theme"] instance=ExtResource( 7 )]
+margin_left = 1732.04
+margin_top = -0.180939
+margin_right = 1920.04
+margin_bottom = 114.819
+custom_styles/normal = SubResource( 21 )
+
+[node name="Title" type="Label" parent="HUD/OptionsHUD" groups=["theme"]]
+margin_left = 4.0
+margin_top = -1.0
+margin_right = 1918.0
+margin_bottom = 119.0
+custom_fonts/font = SubResource( 1 )
+text = "Options"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VolumeSlider" type="HSlider" parent="HUD/OptionsHUD" groups=["theme"]]
+margin_left = 869.0
+margin_top = 176.391
+margin_right = 1669.0
+margin_bottom = 276.391
+custom_icons/tick = SubResource( 22 )
+custom_icons/grabber_disabled = SubResource( 23 )
+custom_icons/grabber_highlight = SubResource( 24 )
+custom_icons/grabber = SubResource( 25 )
+custom_styles/slider = SubResource( 26 )
+custom_styles/grabber_area_highlight = SubResource( 27 )
+custom_styles/grabber_area = SubResource( 28 )
+max_value = 200.0
+value = 100.0
+ticks_on_borders = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VolumeInfoText" type="Label" parent="HUD/OptionsHUD" groups=["theme"]]
+margin_left = 208.602
+margin_top = 190.333
+margin_right = 853.601
+margin_bottom = 286.333
+custom_colors/font_color = Color( 0.898039, 0.898039, 0.898039, 1 )
+custom_fonts/font = SubResource( 29 )
+text = "Master Volume"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VolumeValue" type="Label" parent="HUD/OptionsHUD" groups=["theme"]]
+pause_mode = 2
+margin_left = 1672.63
+margin_top = 189.05
+margin_right = 1920.63
+margin_bottom = 285.05
+custom_colors/font_color = Color( 0.898039, 0.898039, 0.898039, 1 )
+custom_fonts/font = SubResource( 29 )
+text = "100%"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResolutionSlider" type="HSlider" parent="HUD/OptionsHUD" groups=["theme"]]
+margin_left = 869.0
+margin_top = 297.634
+margin_right = 1669.0
+margin_bottom = 397.634
+custom_icons/tick = SubResource( 22 )
+custom_icons/grabber_disabled = SubResource( 23 )
+custom_icons/grabber_highlight = SubResource( 24 )
+custom_icons/grabber = SubResource( 25 )
+custom_styles/slider = SubResource( 26 )
+custom_styles/grabber_area_highlight = SubResource( 30 )
+custom_styles/grabber_area = SubResource( 28 )
+min_value = 5.0
+value = 100.0
+ticks_on_borders = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResolutionInfoText" type="Label" parent="HUD/OptionsHUD" groups=["theme"]]
+margin_left = 208.602
+margin_top = 313.288
+margin_right = 853.601
+margin_bottom = 409.288
+custom_colors/font_color = Color( 0.898039, 0.898039, 0.898039, 1 )
+custom_fonts/font = SubResource( 29 )
+text = "Render Resolution"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResolutionValue" type="Label" parent="HUD/OptionsHUD" groups=["theme"]]
+margin_left = 1672.63
+margin_top = 312.429
+margin_right = 1920.63
+margin_bottom = 408.429
+custom_colors/font_color = Color( 0.898039, 0.898039, 0.898039, 1 )
+custom_fonts/font = SubResource( 29 )
+text = "100%"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UI" type="Label" parent="HUD/OptionsHUD" groups=["theme"]]
+margin_left = 208.602
+margin_top = 432.879
+margin_right = 853.601
+margin_bottom = 528.879
+custom_colors/font_color = Color( 0.898039, 0.898039, 0.898039, 1 )
+custom_fonts/font = SubResource( 29 )
+text = "Extra UI Opacity"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UISlider" type="HSlider" parent="HUD/OptionsHUD" groups=["theme"]]
+margin_left = 869.0
+margin_top = 417.226
+margin_right = 1669.0
+margin_bottom = 517.226
+custom_icons/tick = SubResource( 22 )
+custom_icons/grabber_disabled = SubResource( 23 )
+custom_icons/grabber_highlight = SubResource( 24 )
+custom_icons/grabber = SubResource( 25 )
+custom_styles/slider = SubResource( 26 )
+custom_styles/grabber_area_highlight = SubResource( 31 )
+custom_styles/grabber_area = SubResource( 28 )
+value = 100.0
+ticks_on_borders = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UIValue" type="Label" parent="HUD/OptionsHUD" groups=["theme"]]
+margin_left = 1672.63
+margin_top = 432.02
+margin_right = 1920.63
+margin_bottom = 528.02
+custom_colors/font_color = Color( 0.898039, 0.898039, 0.898039, 1 )
+custom_fonts/font = SubResource( 29 )
+text = "100%"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MS" type="Label" parent="HUD/OptionsHUD" groups=["theme"]]
+margin_left = 14.0
+margin_top = 547.679
+margin_right = 860.0
+margin_bottom = 643.679
+custom_colors/font_color = Color( 0.898039, 0.898039, 0.898039, 1 )
+custom_fonts/font = SubResource( 29 )
+text = "Millisecond Opacity (0% targets 1 FPS)"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MSSlider" type="HSlider" parent="HUD/OptionsHUD" groups=["theme"]]
+margin_left = 869.0
+margin_top = 531.588
+margin_right = 1669.0
+margin_bottom = 631.588
+custom_icons/tick = SubResource( 22 )
+custom_icons/grabber_disabled = SubResource( 23 )
+custom_icons/grabber_highlight = SubResource( 24 )
+custom_icons/grabber = SubResource( 25 )
+custom_styles/slider = SubResource( 26 )
+custom_styles/grabber_area_highlight = SubResource( 31 )
+custom_styles/grabber_area = SubResource( 28 )
+value = 100.0
+ticks_on_borders = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MSValue" type="Label" parent="HUD/OptionsHUD" groups=["theme"]]
+margin_left = 1672.63
+margin_top = 546.382
+margin_right = 1920.63
+margin_bottom = 642.382
+custom_colors/font_color = Color( 0.898039, 0.898039, 0.898039, 1 )
+custom_fonts/font = SubResource( 29 )
+text = "100%"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Metronome" type="Label" parent="HUD/OptionsHUD" groups=["theme"]]
+margin_left = 14.0
+margin_top = 660.384
+margin_right = 860.0
+margin_bottom = 756.384
+custom_colors/font_color = Color( 0.898039, 0.898039, 0.898039, 1 )
+custom_fonts/font = SubResource( 29 )
+text = "Stopwatch Metronome Interval"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MetronomeSlider" type="HSlider" parent="HUD/OptionsHUD" groups=["theme"]]
+margin_left = 869.0
+margin_top = 644.293
+margin_right = 1669.0
+margin_bottom = 744.293
+custom_icons/tick = SubResource( 22 )
+custom_icons/grabber_disabled = SubResource( 23 )
+custom_icons/grabber_highlight = SubResource( 24 )
+custom_icons/grabber = SubResource( 25 )
+custom_styles/slider = SubResource( 26 )
+custom_styles/grabber_area_highlight = SubResource( 31 )
+custom_styles/grabber_area = SubResource( 28 )
+max_value = 120.0
+value = 60.0
+ticks_on_borders = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MetronomeValue" type="Label" parent="HUD/OptionsHUD" groups=["theme"]]
+margin_left = 1672.63
+margin_top = 659.087
+margin_right = 1920.63
+margin_bottom = 755.087
+custom_colors/font_color = Color( 0.898039, 0.898039, 0.898039, 1 )
+custom_fonts/font = SubResource( 29 )
+text = "60s"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ThemeColorPicker" type="Area2D" parent="HUD/OptionsHUD"]
+visible = false
+position = Vector2( 33.2155, -12.8364 )
+z_index = 2
+
+[node name="BG" type="ColorRect" parent="HUD/OptionsHUD/ThemeColorPicker"]
+margin_left = 53.7145
+margin_top = 91.7145
+margin_right = 773.714
+margin_bottom = 903.714
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ThemeColorPicker" type="ColorPicker" parent="HUD/OptionsHUD/ThemeColorPicker"]
+margin_left = 99.0
+margin_top = 143.0
+margin_right = 775.0
+margin_bottom = 915.0
+theme = SubResource( 33 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ThemeButton" type="Button" parent="HUD/OptionsHUD" groups=["theme"]]
+margin_left = 888.0
+margin_top = 775.21
+margin_right = 1200.0
+margin_bottom = 894.21
+focus_neighbour_left = NodePath("../CustomButton")
+focus_neighbour_top = NodePath("../InstructionsButton")
+focus_neighbour_right = NodePath("../CustomButton")
+focus_neighbour_bottom = NodePath("../QuitButton")
+focus_next = NodePath("../CustomButton")
+focus_previous = NodePath("../CustomButton")
+theme = SubResource( 9 )
+custom_fonts/font = SubResource( 13 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/normal = ExtResource( 9 )
+text = "Theme"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CustomMetronomeButton" type="Button" parent="HUD/OptionsHUD" groups=["theme"]]
+visible = false
+margin_left = 537.185
+margin_top = 926.013
+margin_right = 849.185
+margin_bottom = 1045.01
+focus_neighbour_left = NodePath("../CustomButton")
+focus_neighbour_top = NodePath("../InstructionsButton")
+focus_neighbour_right = NodePath("../CustomButton")
+focus_neighbour_bottom = NodePath("../QuitButton")
+focus_next = NodePath("../CustomButton")
+focus_previous = NodePath("../CustomButton")
+theme = SubResource( 9 )
+custom_fonts/font = SubResource( 13 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/normal = ExtResource( 9 )
+text = "Metronome"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MetronomeFile" type="FileDialog" parent="HUD/OptionsHUD" groups=["theme"]]
+margin_left = 71.0
+margin_top = 50.0
+margin_right = 877.0
+margin_bottom = 924.0
+theme = SubResource( 51 )
+popup_exclusive = true
+window_title = "Select a Metronome Sound File"
+resizable = true
+mode = 0
+access = 2
+filters = PoolStringArray( ".wav", ".mp3" )
+current_dir = "/Users/josep/Documents/GitHub/SpeedTimer"
+current_path = "/Users/josep/Documents/GitHub/SpeedTimer/"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CustomSoundButton" type="Button" parent="HUD/OptionsHUD" groups=["theme"]]
+visible = false
+margin_left = 888.0
+margin_top = 926.013
+margin_right = 1200.0
+margin_bottom = 1045.01
+focus_neighbour_left = NodePath("../CustomButton")
+focus_neighbour_top = NodePath("../InstructionsButton")
+focus_neighbour_right = NodePath("../CustomButton")
+focus_neighbour_bottom = NodePath("../QuitButton")
+focus_next = NodePath("../CustomButton")
+focus_previous = NodePath("../CustomButton")
+theme = SubResource( 9 )
+custom_fonts/font = SubResource( 13 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/normal = ExtResource( 9 )
+text = "Timer Sound"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fullscreen" type="Area2D" parent="HUD/OptionsHUD" groups=["theme"]]
+position = Vector2( 890.885, -101.593 )
+
+[node name="Label" type="Label" parent="HUD/OptionsHUD/Fullscreen"]
+margin_left = 114.602
+margin_top = 906.888
+margin_right = 759.601
+margin_bottom = 1002.89
+custom_colors/font_color = Color( 0.898039, 0.898039, 0.898039, 1 )
+custom_fonts/font = SubResource( 29 )
+text = "Fullscreen"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckboxBG" type="TextureRect" parent="HUD/OptionsHUD/Fullscreen"]
+margin_left = 777.702
+margin_top = 868.224
+margin_right = 927.702
+margin_bottom = 1018.22
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FullscreenCheckbox" type="CheckBox" parent="HUD/OptionsHUD/Fullscreen"]
+margin_left = 804.29
+margin_top = 891.521
+margin_right = 904.29
+margin_bottom = 999.521
+custom_fonts/font = ExtResource( 8 )
+custom_icons/radio_checked = SubResource( 44 )
+custom_icons/checked = SubResource( 45 )
+custom_icons/radio_unchecked = SubResource( 46 )
+custom_icons/unchecked = SubResource( 47 )
+custom_styles/pressed = SubResource( 48 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rotation" type="Area2D" parent="HUD/OptionsHUD" groups=["theme"]]
+visible = false
+position = Vector2( 890.885, -10.6474 )
+
+[node name="Label" type="Label" parent="HUD/OptionsHUD/Rotation"]
+margin_left = 114.602
+margin_top = 906.888
+margin_right = 759.601
+margin_bottom = 1002.89
+custom_colors/font_color = Color( 0.898039, 0.898039, 0.898039, 1 )
+custom_fonts/font = SubResource( 29 )
+text = "Portrait"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckboxBG" type="TextureRect" parent="HUD/OptionsHUD/Rotation"]
+margin_left = 777.702
+margin_top = 868.224
+margin_right = 927.702
+margin_bottom = 1018.22
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RotationCheckbox" type="CheckBox" parent="HUD/OptionsHUD/Rotation"]
+visible = false
+margin_left = 804.29
+margin_top = 891.521
+margin_right = 904.29
+margin_bottom = 999.521
+custom_fonts/font = ExtResource( 8 )
+custom_icons/radio_checked = SubResource( 44 )
+custom_icons/checked = SubResource( 45 )
+custom_icons/radio_unchecked = SubResource( 46 )
+custom_icons/unchecked = SubResource( 47 )
+custom_styles/pressed = SubResource( 48 )
+pressed = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="input_event" from="HUD/BG" to="." method="_on_Background_input_event"]
+[connection signal="gui_input" from="HUD/Hours" to="." method="_on_Hours_gui_input"]
+[connection signal="gui_input" from="HUD/Minutes" to="." method="_on_Minutes_gui_input"]
+[connection signal="gui_input" from="HUD/Seconds" to="." method="_on_Seconds_gui_input"]
+[connection signal="gui_input" from="HUD/Milliseconds" to="." method="_on_Milliseconds_gui_input"]
+[connection signal="pressed" from="HUD/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="HUD/TimerButton" to="." method="_on_TimerButton_pressed"]
+[connection signal="pressed" from="HUD/StopwatchButton" to="." method="_on_StopwatchButton_pressed"]
+[connection signal="pressed" from="HUD/ClearButton" to="." method="_on_ClearButton_pressed"]
+[connection signal="pressed" from="HUD/QuitButton" to="HUD" method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="HUD/OptionsButton" to="." method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="HUD/OptionsHUD/GeneralClose" to="HUD" method="_on_GeneralClose_pressed"]
+[connection signal="value_changed" from="HUD/OptionsHUD/VolumeSlider" to="HUD" method="_on_VolumeSlider_value_changed"]
+[connection signal="value_changed" from="HUD/OptionsHUD/ResolutionSlider" to="HUD" method="_on_ResolutionSlider_value_changed"]
+[connection signal="value_changed" from="HUD/OptionsHUD/UISlider" to="HUD" method="_on_UISlider_value_changed"]
+[connection signal="value_changed" from="HUD/OptionsHUD/MSSlider" to="HUD" method="_on_MSSlider_value_changed"]
+[connection signal="value_changed" from="HUD/OptionsHUD/MetronomeSlider" to="HUD" method="_on_MetronomeSlider_value_changed"]
+[connection signal="color_changed" from="HUD/OptionsHUD/ThemeColorPicker/ThemeColorPicker" to="HUD" method="_on_ThemeColorPicker_color_changed"]
+[connection signal="pressed" from="HUD/OptionsHUD/ThemeButton" to="HUD" method="_on_ThemeButton_pressed"]
+[connection signal="pressed" from="HUD/OptionsHUD/CustomMetronomeButton" to="HUD" method="_on_CustomMetronomeButton_pressed"]
+[connection signal="file_selected" from="HUD/OptionsHUD/MetronomeFile" to="HUD" method="_on_MetronomeFile_file_selected"]
+[connection signal="pressed" from="HUD/OptionsHUD/CustomSoundButton" to="HUD" method="_on_CustomSoundButton_pressed"]
+[connection signal="pressed" from="HUD/OptionsHUD/Fullscreen/FullscreenCheckbox" to="HUD" method="_on_FullscreenCheckbox_pressed"]
+[connection signal="pressed" from="HUD/OptionsHUD/Rotation/RotationCheckbox" to="." method="_on_RotationCheckbox_pressed"]
+[connection signal="toggled" from="HUD/OptionsHUD/Rotation/RotationCheckbox" to="." method="_on_RotationCheckbox_toggled"]

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/piano-slow-high.wav-e3c5193f72f19e3681c130e1068bf302.sample"
+
+[deps]
+
+source_file="res://Sounds/piano-slow-high.wav"
+dest_files=[ "res://.import/piano-slow-high.wav-e3c5193f72f19e3681c130e1068bf302.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

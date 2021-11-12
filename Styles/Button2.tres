@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 1 )
+
+[resource]
+/colors/ = Color( 0, 0, 0, 1 )
+/styles/ = SubResource( 1 )

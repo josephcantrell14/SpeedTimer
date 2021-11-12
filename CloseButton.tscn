@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Styles/Button.tres" type="StyleBox" id=1]
+[ext_resource path="res://Styles/ButtonPress.tres" type="StyleBox" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.00392157, 0.615686, 0.882353, 1 )
+border_color = Color( 0.898039, 0.0196078, 0.0196078, 1 )
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://Fonts/roboto.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 100
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 2 )
+
+[node name="GeneralClose" type="Button"]
+pause_mode = 2
+margin_left = 1697.0
+margin_top = 71.0
+margin_right = 1885.0
+margin_bottom = 186.0
+custom_styles/hover = ExtResource( 1 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/normal = SubResource( 1 )
+
+[node name="x" type="Label" parent="."]
+margin_top = -19.0
+margin_right = 190.0
+margin_bottom = 114.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.898039, 0.898039, 0.898039, 1 )
+text = "x"
+align = 1
+valign = 1

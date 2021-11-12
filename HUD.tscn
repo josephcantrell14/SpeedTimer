@@ -1,0 +1,1274 @@
+[gd_scene load_steps=86 format=2]
+
+[ext_resource path="res://HUD.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Effects/black-spark.png" type="Texture" id=2]
+[ext_resource path="res://Styles/ButtonPress.tres" type="StyleBox" id=3]
+[ext_resource path="res://Sprites/Icons/pause.png" type="Texture" id=5]
+[ext_resource path="res://Fonts/roboto.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Styles/ButtonNormal.tres" type="StyleBox" id=7]
+[ext_resource path="res://CloseButton.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Styles/Button.tres" type="StyleBox" id=9]
+[ext_resource path="res://Styles/ButtonText.tres" type="DynamicFont" id=10]
+[ext_resource path="res://Styles/ButtonFont.tres" type="DynamicFont" id=11]
+[ext_resource path="res://Sprites/Effects/fire-matrix.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Icons/glow-icon.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Icons/Joy.png" type="Texture" id=14]
+
+[sub_resource type="DynamicFont" id=1]
+size = 45
+font_data = ExtResource( 6 )
+
+[sub_resource type="Theme" id=2]
+
+[sub_resource type="StyleBoxFlat" id=69]
+bg_color = Color( 0.0313726, 0.0313726, 0.0666667, 1 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 1, 0, 0.784314, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color( 1, 0, 0.784314, 1 )
+
+[sub_resource type="DynamicFontData" id=4]
+font_path = "res://Fonts/roboto.ttf"
+
+[sub_resource type="DynamicFont" id=5]
+size = 110
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=70]
+bg_color = Color( 0.0313726, 0.0313726, 0.0666667, 1 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 1, 0, 0.784314, 1 )
+
+[sub_resource type="DynamicFontData" id=54]
+font_path = "res://Fonts/roboto.ttf"
+
+[sub_resource type="DynamicFont" id=55]
+size = 75
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 54 )
+
+[sub_resource type="StyleBoxFlat" id=71]
+bg_color = Color( 0.0313726, 0.0313726, 0.0666667, 1 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 1, 0, 0.784314, 1 )
+
+[sub_resource type="DynamicFontData" id=56]
+font_path = "res://Fonts/roboto.ttf"
+
+[sub_resource type="DynamicFont" id=57]
+size = 75
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 56 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 60
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.00392157, 0.615686, 0.882353, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.898039, 0.0196078, 0.0196078, 1 )
+
+[sub_resource type="DynamicFontData" id=9]
+font_path = "res://Fonts/roboto.ttf"
+
+[sub_resource type="DynamicFont" id=10]
+size = 100
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 9 )
+
+[sub_resource type="StyleBoxFlat" id=72]
+bg_color = Color( 0.0313726, 0.0313726, 0.0666667, 1 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 1, 0, 0.784314, 1 )
+
+[sub_resource type="DynamicFontData" id=58]
+font_path = "res://Fonts/roboto.ttf"
+
+[sub_resource type="DynamicFont" id=59]
+size = 75
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 58 )
+
+[sub_resource type="Theme" id=12]
+
+[sub_resource type="DynamicFont" id=13]
+size = 50
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 24
+font_data = ExtResource( 6 )
+
+[sub_resource type="Theme" id=15]
+default_font = SubResource( 14 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.00392157, 0.615686, 0.882353, 1 )
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.0313726, 0.0313726, 0.0666667, 1 )
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color( 0.00392157, 0.615686, 0.882353, 1 )
+
+[sub_resource type="StyleBoxFlat" id=18]
+bg_color = Color( 0, 0, 0, 1 )
+border_color = Color( 0.00392157, 0.615686, 0.882353, 1 )
+
+[sub_resource type="StyleBoxFlat" id=19]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.00392157, 0.615686, 0.882353, 1 )
+
+[sub_resource type="Gradient" id=20]
+offsets = PoolRealArray( 0, 0.0140845, 0.957747 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=21]
+gradient = SubResource( 20 )
+
+[sub_resource type="Curve" id=22]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.489773 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=23]
+curve = SubResource( 22 )
+
+[sub_resource type="ParticlesMaterial" id=24]
+flag_disable_z = true
+direction = Vector3( 1, 1, 0 )
+spread = 4.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 500.0
+angular_velocity = -320.0
+orbit_velocity = 0.12
+orbit_velocity_random = 0.0
+scale_curve = SubResource( 23 )
+color_ramp = SubResource( 21 )
+
+[sub_resource type="Gradient" id=25]
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=26]
+gradient = SubResource( 25 )
+
+[sub_resource type="Curve" id=27]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.610227 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=28]
+curve = SubResource( 27 )
+
+[sub_resource type="ParticlesMaterial" id=29]
+flag_disable_z = true
+direction = Vector3( 1, -1, 0 )
+spread = 4.0
+gravity = Vector3( 0, 30, 0 )
+initial_velocity = 400.0
+angular_velocity = 320.0
+orbit_velocity = -0.1
+orbit_velocity_random = 0.0
+scale_curve = SubResource( 28 )
+color_ramp = SubResource( 26 )
+
+[sub_resource type="ParticlesMaterial" id=30]
+flag_disable_z = true
+direction = Vector3( 1, -1, 0 )
+spread = 4.0
+gravity = Vector3( 0, 30, 0 )
+initial_velocity = 400.0
+orbit_velocity = -0.1
+orbit_velocity_random = 0.0
+scale_curve = SubResource( 28 )
+color_ramp = SubResource( 26 )
+
+[sub_resource type="StyleBoxFlat" id=73]
+bg_color = Color( 0.0313726, 0.0313726, 0.0666667, 1 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 1, 0, 0.784314, 1 )
+
+[sub_resource type="DynamicFontData" id=60]
+font_path = "res://Fonts/roboto.ttf"
+
+[sub_resource type="DynamicFont" id=61]
+size = 75
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 60 )
+
+[sub_resource type="StyleBoxFlat" id=31]
+bg_color = Color( 0.00392157, 0.615686, 0.882353, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.898039, 0.0196078, 0.0196078, 1 )
+
+[sub_resource type="StyleBoxFlat" id=32]
+bg_color = Color( 0.00392157, 0.615686, 0.882353, 1 )
+border_color = Color( 0.898039, 0.0196078, 0.0196078, 1 )
+
+[sub_resource type="DynamicFont" id=48]
+size = 54
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="ImageTexture" id=33]
+
+[sub_resource type="ImageTexture" id=34]
+
+[sub_resource type="ImageTexture" id=35]
+
+[sub_resource type="ImageTexture" id=36]
+
+[sub_resource type="StyleBoxTexture" id=37]
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 550, 100 )
+modulate_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxTexture" id=38]
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 550, 100 )
+
+[sub_resource type="StyleBoxTexture" id=39]
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 550, 100 )
+
+[sub_resource type="DynamicFont" id=40]
+size = 44
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxTexture" id=41]
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 550, 100 )
+
+[sub_resource type="StyleBoxTexture" id=42]
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 550, 100 )
+
+[sub_resource type="StyleBoxFlat" id=74]
+bg_color = Color( 0.0313726, 0.0313726, 0.0666667, 1 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 1, 0, 0.784314, 1 )
+
+[sub_resource type="ImageTexture" id=43]
+
+[sub_resource type="ImageTexture" id=44]
+
+[sub_resource type="ImageTexture" id=45]
+
+[sub_resource type="ImageTexture" id=46]
+
+[sub_resource type="StyleBoxTexture" id=47]
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 40, 40 )
+
+[sub_resource type="DynamicFont" id=49]
+size = 40
+outline_color = Color( 0.898039, 0.898039, 0.898039, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=50]
+bg_color = Color( 0.0313726, 0.0313726, 0.0666667, 1 )
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color( 0.00392157, 0.615686, 0.882353, 1 )
+
+[sub_resource type="StyleBoxFlat" id=51]
+bg_color = Color( 0.0313726, 0.0313726, 0.0666667, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 1, 0, 0.784314, 1 )
+
+[sub_resource type="DynamicFont" id=62]
+size = 50
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=52]
+size = 30
+outline_color = Color( 0.898039, 0.898039, 0.898039, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=63]
+size = 50
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=53]
+bg_color = Color( 0.00392157, 0.615686, 0.882353, 1 )
+
+[sub_resource type="DynamicFont" id=64]
+size = 54
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=65]
+size = 40
+outline_color = Color( 0.898039, 0.898039, 0.898039, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=66]
+bg_color = Color( 0.0313726, 0.0313726, 0.0666667, 1 )
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color( 1, 0, 0.784314, 1 )
+
+[sub_resource type="StyleBoxFlat" id=67]
+bg_color = Color( 0.0313726, 0.0313726, 0.0666667, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 1, 0, 0.784314, 1 )
+
+[sub_resource type="StyleBoxFlat" id=68]
+bg_color = Color( 1, 0, 0.784314, 1 )
+
+[node name="HUD" type="CanvasLayer"]
+pause_mode = 2
+script = ExtResource( 1 )
+
+[node name="ScoreLabel" type="Label" parent="."]
+visible = false
+margin_left = 8.822
+margin_top = 1015.0
+margin_right = 60.822
+margin_bottom = 1076.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" type="Button" parent="."]
+margin_left = 1475.0
+margin_top = 902.0
+margin_right = 1895.0
+margin_bottom = 1062.0
+focus_neighbour_left = NodePath("../CustomButton")
+focus_neighbour_top = NodePath("../InstructionsButton")
+focus_neighbour_right = NodePath("../CustomButton")
+focus_neighbour_bottom = NodePath("../QuitButton")
+focus_next = NodePath("../CustomButton")
+focus_previous = NodePath("../CustomButton")
+theme = SubResource( 2 )
+custom_styles/hover = SubResource( 69 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = ExtResource( 7 )
+custom_fonts/font = SubResource( 5 )
+text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InstructionsButton" type="Button" parent="."]
+margin_left = 1556.0
+margin_top = 726.0
+margin_right = 1894.0
+margin_bottom = 846.0
+theme = SubResource( 2 )
+custom_styles/hover = SubResource( 70 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = ExtResource( 7 )
+custom_fonts/font = SubResource( 55 )
+text = "?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitButton" type="Button" parent="."]
+margin_left = 1556.0
+margin_top = 570.0
+margin_right = 1895.0
+margin_bottom = 690.0
+theme = SubResource( 2 )
+custom_styles/hover = SubResource( 71 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = ExtResource( 7 )
+custom_fonts/font = SubResource( 57 )
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InstructionsPopup" type="Area2D" parent="."]
+visible = false
+z_index = 1
+
+[node name="Rect" type="Button" parent="InstructionsPopup"]
+pause_mode = 2
+margin_left = 125.0
+margin_top = 47.0
+margin_right = 1797.0
+margin_bottom = 1035.0
+custom_styles/disabled = ExtResource( 7 )
+disabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="InstructionsPopup/Rect"]
+margin_left = 26.0
+margin_top = 137.0
+margin_right = 1615.0
+margin_bottom = 961.0
+custom_fonts/font = SubResource( 7 )
+text = "Spark through the infernal abyss to ignite the Essence.
+
+Swipe and tap alongside your spark to push through the infinitely generated tunnel of flames.  
+Move up: Click above spark, W, or D-pad Up
+Move down: Click below spark, S, or D-pad Down
+Pause: Escape
+
+Collect 100 total Essence to unlock custom color theming."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CloseInstructions" type="Button" parent="InstructionsPopup/Rect"]
+pause_mode = 2
+margin_left = 1483.9
+margin_top = 0.147484
+margin_right = 1671.9
+margin_bottom = 115.147
+custom_styles/hover = ExtResource( 9 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/normal = SubResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="x" type="Label" parent="InstructionsPopup/Rect/CloseInstructions"]
+margin_top = -19.0
+margin_right = 190.0
+margin_bottom = 114.0
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 0.898039, 0.898039, 0.898039, 1 )
+text = "x"
+align = 1
+valign = 1
+
+[node name="CustomButton" type="Button" parent="."]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 366.0
+margin_bottom = 136.0
+theme = SubResource( 2 )
+custom_styles/hover = SubResource( 72 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = ExtResource( 7 )
+custom_fonts/font = SubResource( 59 )
+text = "Custom"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseButton" type="Button" parent="."]
+pause_mode = 2
+visible = false
+margin_left = 24.0
+margin_top = 15.0
+margin_right = 164.0
+margin_bottom = 149.0
+focus_mode = 0
+theme = SubResource( 12 )
+enabled_focus_mode = 0
+icon = ExtResource( 5 )
+flat = true
+
+[node name="Custom" type="Area2D" parent="."]
+visible = false
+z_index = 1
+
+[node name="Rect" type="Button" parent="Custom"]
+pause_mode = 2
+margin_left = 39.0
+margin_top = 37.0
+margin_right = 1891.0
+margin_bottom = 1035.0
+custom_styles/disabled = ExtResource( 7 )
+disabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Progress" type="Label" parent="Custom/Rect"]
+margin_left = 46.0
+margin_top = 688.648
+margin_right = 891.0
+margin_bottom = 831.648
+custom_fonts/font = SubResource( 13 )
+text = "Progress: 0/100"
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BestScore" type="Label" parent="Custom/Rect"]
+margin_left = 46.0
+margin_top = 809.947
+margin_right = 891.0
+margin_bottom = 952.947
+custom_fonts/font = SubResource( 13 )
+text = "Best Score: 0"
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SparkColorPicker" type="Area2D" parent="Custom/Rect"]
+visible = false
+position = Vector2( -77, -94.429 )
+z_index = 2
+
+[node name="BG" type="ColorRect" parent="Custom/Rect/SparkColorPicker"]
+margin_left = 44.0
+margin_top = 90.0
+margin_right = 735.0
+margin_bottom = 888.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SparkColorPicker" type="ColorPicker" parent="Custom/Rect/SparkColorPicker"]
+margin_left = 67.0
+margin_top = 111.0
+margin_right = 724.0
+margin_bottom = 883.0
+theme = SubResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ThemeColorPicker" type="Area2D" parent="Custom/Rect"]
+visible = false
+position = Vector2( -77, 80.107 )
+z_index = 2
+
+[node name="BG" type="ColorRect" parent="Custom/Rect/ThemeColorPicker"]
+margin_left = 52.0
+margin_top = 47.0
+margin_right = 740.0
+margin_bottom = 888.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ThemeColorPicker" type="ColorPicker" parent="Custom/Rect/ThemeColorPicker"]
+margin_left = 70.0
+margin_top = 69.0
+margin_right = 722.0
+margin_bottom = 887.0
+theme = SubResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ThemeColorButton" type="Button" parent="Custom/Rect"]
+anchor_left = 0.378
+anchor_top = 0.778
+anchor_right = 0.378
+anchor_bottom = 0.778
+margin_left = -38.3179
+margin_top = 61.438
+margin_right = 364.682
+margin_bottom = 191.438
+custom_styles/hover = ExtResource( 9 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/normal = SubResource( 16 )
+disabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Custom/Rect/ThemeColorButton"]
+margin_left = 1.0
+margin_top = 4.0
+margin_right = 402.0
+margin_bottom = 124.0
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0, 0.671875, 1, 1 )
+text = "Theme Color"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SparkColorButton" type="Button" parent="Custom/Rect"]
+anchor_left = 0.378
+anchor_top = 0.778
+anchor_right = 0.378
+anchor_bottom = 0.778
+margin_left = -38.3179
+margin_top = -113.562
+margin_right = 364.682
+margin_bottom = 16.438
+custom_styles/hover = SubResource( 17 )
+custom_styles/pressed = SubResource( 18 )
+custom_styles/normal = SubResource( 19 )
+disabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Custom/Rect/SparkColorButton"]
+margin_left = 1.0
+margin_top = 4.0
+margin_right = 402.0
+margin_bottom = 124.0
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0, 0.671875, 1, 1 )
+text = "Spark Color"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="XP" type="Area2D" parent="Custom/Rect"]
+position = Vector2( -110.309, 48.0833 )
+scale = Vector2( 0.7, 0.7 )
+
+[node name="DNA" type="Area2D" parent="Custom/Rect/XP"]
+position = Vector2( 304.404, 500 )
+z_index = 1
+
+[node name="Particles2D" type="Particles2D" parent="Custom/Rect/XP/DNA"]
+amount = 105
+lifetime = 3.01
+process_material = SubResource( 24 )
+texture = ExtResource( 2 )
+
+[node name="Particles2D2" type="Particles2D" parent="Custom/Rect/XP/DNA"]
+amount = 105
+lifetime = 3.01
+process_material = SubResource( 29 )
+texture = ExtResource( 2 )
+
+[node name="DNA2" type="Area2D" parent="Custom/Rect/XP"]
+position = Vector2( 2465.95, 500 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+z_index = 1
+
+[node name="Particles2D" type="Particles2D" parent="Custom/Rect/XP/DNA2"]
+amount = 105
+lifetime = 3.01
+process_material = SubResource( 24 )
+texture = ExtResource( 2 )
+
+[node name="Particles2D2" type="Particles2D" parent="Custom/Rect/XP/DNA2"]
+amount = 105
+lifetime = 3.01
+process_material = SubResource( 30 )
+texture = ExtResource( 2 )
+
+[node name="GeneralOptionsButton" type="Button" parent="Custom/Rect"]
+margin_left = 1220.56
+margin_top = 848.5
+margin_right = 1819.56
+margin_bottom = 962.5
+theme = SubResource( 2 )
+custom_styles/hover = SubResource( 73 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = ExtResource( 7 )
+custom_fonts/font = SubResource( 61 )
+text = "General Options"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CloseCustom" parent="Custom/Rect" instance=ExtResource( 8 )]
+margin_left = 1663.92
+margin_top = 0.147484
+margin_right = 1851.92
+margin_bottom = 115.147
+custom_styles/normal = SubResource( 31 )
+
+[node name="GeneralOptionsHUD" type="Area2D" parent="."]
+pause_mode = 2
+visible = false
+position = Vector2( 7.88721, 11.5442 )
+z_index = 3
+
+[node name="Background" type="Button" parent="GeneralOptionsHUD"]
+pause_mode = 2
+margin_left = 30.0
+margin_top = 66.0
+margin_right = 1890.0
+margin_bottom = 1054.0
+custom_styles/disabled = ExtResource( 7 )
+disabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GeneralClose" parent="GeneralOptionsHUD" instance=ExtResource( 8 )]
+margin_left = 1702.03
+margin_top = 66.1004
+margin_right = 1890.03
+margin_bottom = 181.1
+custom_styles/normal = SubResource( 32 )
+
+[node name="Title" type="Label" parent="GeneralOptionsHUD"]
+margin_left = 7.0
+margin_top = 77.0357
+margin_right = 1856.0
+margin_bottom = 179.036
+custom_fonts/font = SubResource( 48 )
+custom_colors/font_color = Color( 1, 0, 0.784314, 1 )
+text = "Options"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VolumeSlider" type="HSlider" parent="GeneralOptionsHUD"]
+margin_left = 775.0
+margin_top = 236.712
+margin_right = 1575.0
+margin_bottom = 336.712
+custom_icons/tick = SubResource( 33 )
+custom_icons/grabber_disabled = SubResource( 34 )
+custom_icons/grabber_highlight = SubResource( 35 )
+custom_icons/grabber = SubResource( 36 )
+custom_styles/slider = SubResource( 37 )
+custom_styles/grabber_area_highlight = SubResource( 38 )
+custom_styles/grabber_area = SubResource( 39 )
+max_value = 200.0
+value = 100.0
+ticks_on_borders = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VolumeInfoText" type="Label" parent="GeneralOptionsHUD"]
+margin_left = 114.602
+margin_top = 250.654
+margin_right = 759.601
+margin_bottom = 346.654
+custom_fonts/font = SubResource( 40 )
+custom_colors/font_color = Color( 0.898039, 0.898039, 0.898039, 1 )
+text = "Master Volume"
+align = 2
+
+[node name="VolumeValue" type="Label" parent="GeneralOptionsHUD"]
+pause_mode = 2
+margin_left = 1578.63
+margin_top = 249.371
+margin_right = 1826.63
+margin_bottom = 345.371
+custom_fonts/font = SubResource( 40 )
+custom_colors/font_color = Color( 0.898039, 0.898039, 0.898039, 1 )
+text = "100%"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResolutionSlider" type="HSlider" parent="GeneralOptionsHUD"]
+margin_left = 775.0
+margin_top = 400.0
+margin_right = 1575.0
+margin_bottom = 500.0
+custom_icons/tick = SubResource( 33 )
+custom_icons/grabber_disabled = SubResource( 34 )
+custom_icons/grabber_highlight = SubResource( 35 )
+custom_icons/grabber = SubResource( 36 )
+custom_styles/slider = SubResource( 37 )
+custom_styles/grabber_area_highlight = SubResource( 41 )
+custom_styles/grabber_area = SubResource( 39 )
+min_value = 5.0
+value = 100.0
+ticks_on_borders = true
+
+[node name="ResolutionInfoText" type="Label" parent="GeneralOptionsHUD"]
+margin_left = 114.602
+margin_top = 415.654
+margin_right = 759.601
+margin_bottom = 511.654
+custom_fonts/font = SubResource( 40 )
+custom_colors/font_color = Color( 0.898039, 0.898039, 0.898039, 1 )
+text = "Render Resolution"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResolutionValue" type="Label" parent="GeneralOptionsHUD"]
+margin_left = 1578.63
+margin_top = 414.795
+margin_right = 1826.63
+margin_bottom = 510.795
+custom_fonts/font = SubResource( 40 )
+custom_colors/font_color = Color( 0.898039, 0.898039, 0.898039, 1 )
+text = "100%"
+
+[node name="UI" type="Label" parent="GeneralOptionsHUD"]
+margin_left = 114.602
+margin_top = 580.653
+margin_right = 759.601
+margin_bottom = 676.653
+custom_fonts/font = SubResource( 40 )
+custom_colors/font_color = Color( 0.898039, 0.898039, 0.898039, 1 )
+text = "UI Opacity"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UISlider" type="HSlider" parent="GeneralOptionsHUD"]
+margin_left = 775.0
+margin_top = 565.0
+margin_right = 1575.0
+margin_bottom = 665.0
+custom_icons/tick = SubResource( 33 )
+custom_icons/grabber_disabled = SubResource( 34 )
+custom_icons/grabber_highlight = SubResource( 35 )
+custom_icons/grabber = SubResource( 36 )
+custom_styles/slider = SubResource( 37 )
+custom_styles/grabber_area_highlight = SubResource( 42 )
+custom_styles/grabber_area = SubResource( 39 )
+value = 100.0
+ticks_on_borders = true
+
+[node name="UIValue" type="Label" parent="GeneralOptionsHUD"]
+margin_left = 1578.63
+margin_top = 579.794
+margin_right = 1826.63
+margin_bottom = 675.794
+custom_fonts/font = SubResource( 40 )
+custom_colors/font_color = Color( 0.898039, 0.898039, 0.898039, 1 )
+text = "100%"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InputMap" type="Button" parent="GeneralOptionsHUD"]
+margin_left = 1261.0
+margin_top = 885.0
+margin_right = 1694.0
+margin_bottom = 999.0
+theme = SubResource( 2 )
+custom_styles/hover = SubResource( 74 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = ExtResource( 7 )
+custom_fonts/font = SubResource( 61 )
+text = "Input Map"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fullscreen" type="Area2D" parent="GeneralOptionsHUD"]
+position = Vector2( 0, -160.327 )
+
+[node name="Label" type="Label" parent="GeneralOptionsHUD/Fullscreen"]
+margin_left = 114.602
+margin_top = 906.888
+margin_right = 759.601
+margin_bottom = 1002.89
+custom_fonts/font = SubResource( 40 )
+custom_colors/font_color = Color( 0.898039, 0.898039, 0.898039, 1 )
+text = "Fullscreen"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckboxBG" type="TextureRect" parent="GeneralOptionsHUD/Fullscreen"]
+margin_left = 777.702
+margin_top = 868.224
+margin_right = 927.702
+margin_bottom = 1018.22
+texture = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FullscreenCheckbox" type="CheckBox" parent="GeneralOptionsHUD/Fullscreen"]
+margin_left = 804.29
+margin_top = 891.521
+margin_right = 904.29
+margin_bottom = 999.521
+custom_icons/radio_checked = SubResource( 43 )
+custom_icons/checked = SubResource( 44 )
+custom_icons/radio_unchecked = SubResource( 45 )
+custom_icons/unchecked = SubResource( 46 )
+custom_styles/pressed = SubResource( 47 )
+custom_fonts/font = ExtResource( 11 )
+pressed = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CameraRotate" type="Area2D" parent="GeneralOptionsHUD"]
+position = Vector2( 0, 3.67255 )
+
+[node name="Label" type="Label" parent="GeneralOptionsHUD/CameraRotate"]
+margin_left = 32.1947
+margin_top = 908.888
+margin_right = 758.195
+margin_bottom = 1004.89
+custom_fonts/font = SubResource( 40 )
+custom_colors/font_color = Color( 0.898039, 0.898039, 0.898039, 1 )
+text = "Invert Camera Along Half Pi Axis"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckboxBG" type="TextureRect" parent="GeneralOptionsHUD/CameraRotate"]
+margin_left = 777.702
+margin_top = 868.224
+margin_right = 927.702
+margin_bottom = 1018.22
+texture = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckboxCameraRotate" type="CheckBox" parent="GeneralOptionsHUD/CameraRotate"]
+margin_left = 804.29
+margin_top = 891.521
+margin_right = 904.29
+margin_bottom = 999.521
+custom_icons/radio_checked = SubResource( 43 )
+custom_icons/checked = SubResource( 44 )
+custom_icons/radio_unchecked = SubResource( 45 )
+custom_icons/unchecked = SubResource( 46 )
+custom_styles/pressed = SubResource( 47 )
+custom_fonts/font = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InputMapPopup" type="Area2D" parent="."]
+visible = false
+z_index = 6
+monitoring = false
+monitorable = false
+
+[node name="Rect" type="Button" parent="InputMapPopup"]
+pause_mode = 2
+margin_left = 33.0
+margin_top = 47.0
+margin_right = 1892.0
+margin_bottom = 1054.0
+custom_styles/disabled = ExtResource( 7 )
+disabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="InputMapPopup/Rect"]
+margin_left = 7.0
+margin_top = 9.0
+margin_right = 1856.0
+margin_bottom = 111.0
+custom_fonts/font = SubResource( 48 )
+custom_colors/font_color = Color( 1, 0, 0.784314, 1 )
+text = "Input Map"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="Label" parent="InputMapPopup/Rect"]
+margin_left = 14.0
+margin_top = 119.495
+margin_right = 1859.0
+margin_bottom = 196.495
+custom_fonts/font = SubResource( 49 )
+text = "Customize input bindings after clicking the buttons below.  Controller input is enabled on demand."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoveForward" type="Button" parent="InputMapPopup/Rect"]
+pause_mode = 2
+margin_left = 237.335
+margin_top = 297.0
+margin_right = 572.335
+margin_bottom = 403.0
+custom_styles/hover = SubResource( 50 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/normal = SubResource( 51 )
+custom_fonts/font = SubResource( 62 )
+text = "Shift Up"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="KeyLabel" type="Label" parent="InputMapPopup/Rect/MoveForward"]
+margin_left = 389.754
+margin_top = 31.6632
+margin_right = 569.754
+margin_bottom = 84.6632
+custom_fonts/font = SubResource( 52 )
+text = "W"
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoveBackward" type="Button" parent="InputMapPopup/Rect"]
+pause_mode = 2
+margin_left = 236.0
+margin_top = 499.0
+margin_right = 573.0
+margin_bottom = 605.0
+custom_styles/hover = SubResource( 50 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/normal = SubResource( 51 )
+custom_fonts/font = SubResource( 62 )
+text = "Shift Down"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="KeyLabel" type="Label" parent="InputMapPopup/Rect/MoveBackward"]
+margin_left = 392.017
+margin_top = 33.5946
+margin_right = 572.017
+margin_bottom = 86.5946
+custom_fonts/font = SubResource( 52 )
+text = "S"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pause" type="Button" parent="InputMapPopup/Rect"]
+pause_mode = 2
+margin_left = 236.0
+margin_top = 698.0
+margin_right = 574.0
+margin_bottom = 804.0
+custom_styles/hover = SubResource( 50 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/normal = SubResource( 51 )
+custom_fonts/font = SubResource( 62 )
+text = "Pause"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="KeyLabel" type="Label" parent="InputMapPopup/Rect/Pause"]
+margin_left = 390.789
+margin_top = 35.1243
+margin_right = 570.789
+margin_bottom = 88.1243
+custom_fonts/font = SubResource( 52 )
+text = "Escape"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DefaultInputButton" type="Button" parent="InputMapPopup/Rect"]
+pause_mode = 2
+margin_left = 1373.0
+margin_top = 859.0
+margin_right = 1817.0
+margin_bottom = 965.0
+custom_styles/hover = SubResource( 50 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/normal = SubResource( 51 )
+custom_fonts/font = SubResource( 63 )
+text = "Reset to Default"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CloseInputMapPopup" parent="InputMapPopup/Rect" instance=ExtResource( 8 )]
+margin_left = 1670.63
+margin_top = 0.147484
+margin_right = 1858.63
+margin_bottom = 115.147
+custom_styles/normal = SubResource( 53 )
+
+[node name="Popup" type="Area2D" parent="."]
+visible = false
+z_index = 7
+monitoring = false
+monitorable = false
+
+[node name="Rect" type="Button" parent="Popup"]
+pause_mode = 2
+margin_left = 33.0
+margin_top = 47.0
+margin_right = 1892.0
+margin_bottom = 1054.0
+custom_styles/disabled = ExtResource( 7 )
+disabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Popup/Rect"]
+margin_left = 7.0
+margin_top = 9.0
+margin_right = 1664.0
+margin_bottom = 111.0
+custom_fonts/font = SubResource( 64 )
+custom_colors/font_color = Color( 1, 0, 0.784314, 1 )
+text = "Title"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Popup/Rect"]
+margin_left = 45.0
+margin_top = 137.0
+margin_right = 1630.0
+margin_bottom = 340.0
+custom_fonts/font = SubResource( 65 )
+text = "The quick brown fox jumps over the lazy dog in slow motion."
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Yes" type="Button" parent="Popup/Rect"]
+pause_mode = 2
+visible = false
+margin_left = 241.26
+margin_top = 645.652
+margin_right = 567.26
+margin_bottom = 744.652
+custom_styles/hover = SubResource( 66 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/normal = SubResource( 67 )
+custom_fonts/font = ExtResource( 11 )
+text = "Yes"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="No" type="Button" parent="Popup/Rect"]
+pause_mode = 2
+visible = false
+margin_left = 1049.25
+margin_top = 644.065
+margin_right = 1375.25
+margin_bottom = 743.065
+custom_styles/hover = SubResource( 66 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/normal = SubResource( 67 )
+custom_fonts/font = ExtResource( 11 )
+text = "No"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ClosePopup" parent="Popup/Rect" instance=ExtResource( 8 )]
+margin_left = 1670.63
+margin_top = 0.147484
+margin_right = 1858.63
+margin_bottom = 115.147
+custom_styles/normal = SubResource( 68 )
+
+[connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="InstructionsButton" to="." method="_on_Instructions_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="InstructionsPopup/Rect/CloseInstructions" to="." method="_on_CloseInstructions_pressed"]
+[connection signal="pressed" from="CustomButton" to="." method="_on_CustomButton_pressed"]
+[connection signal="pressed" from="PauseButton" to="." method="_on_PauseButton_pressed"]
+[connection signal="color_changed" from="Custom/Rect/SparkColorPicker/SparkColorPicker" to="." method="_on_SparkColorPicker_color_changed"]
+[connection signal="color_changed" from="Custom/Rect/ThemeColorPicker/ThemeColorPicker" to="." method="_on_ThemeColorPicker_color_changed"]
+[connection signal="pressed" from="Custom/Rect/ThemeColorButton" to="." method="_on_ThemeColorButton_pressed"]
+[connection signal="pressed" from="Custom/Rect/SparkColorButton" to="." method="_on_SparkColorButton_pressed"]
+[connection signal="pressed" from="Custom/Rect/GeneralOptionsButton" to="." method="_on_GeneralOptionsButton_pressed"]
+[connection signal="pressed" from="Custom/Rect/CloseCustom" to="." method="_on_CloseCustom_pressed"]
+[connection signal="pressed" from="GeneralOptionsHUD/GeneralClose" to="." method="_on_GeneralClose_pressed"]
+[connection signal="value_changed" from="GeneralOptionsHUD/VolumeSlider" to="." method="_on_VolumeSlider_value_changed"]
+[connection signal="value_changed" from="GeneralOptionsHUD/ResolutionSlider" to="." method="_on_ResolutionSlider_value_changed"]
+[connection signal="value_changed" from="GeneralOptionsHUD/UISlider" to="." method="_on_UISlider_value_changed"]
+[connection signal="pressed" from="GeneralOptionsHUD/InputMap" to="." method="_on_InputMap_pressed"]
+[connection signal="pressed" from="GeneralOptionsHUD/Fullscreen/FullscreenCheckbox" to="." method="_on_FullscreenCheckbox_pressed"]
+[connection signal="toggled" from="GeneralOptionsHUD/CameraRotate/CheckboxCameraRotate" to="." method="_on_CheckboxCameraRotate_toggled"]
+[connection signal="gui_input" from="InputMapPopup/Rect/MoveForward" to="." method="_on_MoveForward_gui_input"]
+[connection signal="pressed" from="InputMapPopup/Rect/MoveForward" to="." method="_on_MoveForward_pressed"]
+[connection signal="gui_input" from="InputMapPopup/Rect/MoveBackward" to="." method="_on_MoveBackward_gui_input"]
+[connection signal="pressed" from="InputMapPopup/Rect/MoveBackward" to="." method="_on_MoveBackward_pressed"]
+[connection signal="gui_input" from="InputMapPopup/Rect/Pause" to="." method="_on_Pause_gui_input"]
+[connection signal="pressed" from="InputMapPopup/Rect/Pause" to="." method="_on_Pause_pressed"]
+[connection signal="pressed" from="InputMapPopup/Rect/DefaultInputButton" to="." method="_on_DefaultInputButton_pressed"]
+[connection signal="pressed" from="InputMapPopup/Rect/CloseInputMapPopup" to="." method="_on_CloseInputMapPopup_pressed"]
+[connection signal="pressed" from="Popup/Rect/Yes" to="." method="_on_Yes_pressed"]
+[connection signal="pressed" from="Popup/Rect/No" to="." method="_on_No_pressed"]
+[connection signal="pressed" from="Popup/Rect/ClosePopup" to="." method="_on_ClosePopup_pressed"]
