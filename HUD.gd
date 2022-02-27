@@ -48,7 +48,6 @@ func getSave() -> void:
     else:
         get_parent()._on_StopwatchButton_pressed()
     setTheme()
-    $OptionsHUD/Rotation/RotationCheckbox.pressed = invertedCamera
     saveFile.close()
 func setSave() -> void:
     var saveData = {
