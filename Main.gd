@@ -70,30 +70,42 @@ func finishStopwatch() -> void:
     $Stopwatch.end()
     $HUD/StartButton.icon = preload("res://Sprites/Icons/play.png")
     $HUD/ClearButton.show()
+func _on_Hours_focus_entered() -> void:
+    $HUD/Hours.select_all()
+func _on_Minutes_focus_entered() -> void:
+    $HUD/Minutes.select_all()
+func _on_Seconds_focus_entered() -> void:
+    $HUD/Seconds.select_all()
+func _on_Milliseconds_focus_entered() -> void:
+    $HUD/Milliseconds.select_all()
 func _on_Hours_gui_input(event: InputEvent) -> void:
     if input == 1 and (event is InputEventMouseButton or event is InputEventScreenTouch):
         $HUD/Hours.select_all()
         $HUD/Minutes.deselect()
         $HUD/Seconds.deselect()
         $HUD/Milliseconds.deselect()
+        OS.show_virtual_keyboard()
 func _on_Minutes_gui_input(event: InputEvent) -> void:
     if input == 1 and (event is InputEventMouseButton or event is InputEventScreenTouch):
         $HUD/Minutes.select_all()
         $HUD/Hours.deselect()
         $HUD/Seconds.deselect()
         $HUD/Milliseconds.deselect()
+        OS.show_virtual_keyboard()
 func _on_Seconds_gui_input(event: InputEvent) -> void:
     if input == 1 and (event is InputEventMouseButton or event is InputEventScreenTouch):
         $HUD/Seconds.select_all()
         $HUD/Hours.deselect()
         $HUD/Minutes.deselect()
         $HUD/Milliseconds.deselect()
+        OS.show_virtual_keyboard()
 func _on_Milliseconds_gui_input(event: InputEvent) -> void:
     if input == 1 and (event is InputEventMouseButton or event is InputEventScreenTouch):
         $HUD/Milliseconds.select_all()
         $HUD/Seconds.deselect()
         $HUD/Hours.deselect()
         $HUD/Minutes.deselect()
+        OS.show_virtual_keyboard() #test
 func _on_OptionsButton_pressed() -> void:
     $HUD/OptionsHUD.show()
 func _on_GeneralClose_pressed() -> void:
@@ -115,8 +127,3 @@ func _on_StopwatchButton_pressed() -> void:
         $HUD/TimerButton.modulate.a = .5
         finishTimer()
         $HUD.setSave()
-func _on_RotationCheckbox_toggled(button_pressed:bool) -> void:
-    if button_pressed:
-        OS.screen_orientation = OS.SCREEN_ORIENTATION_PORTRAIT
-    else:
-        OS.screen_orientation = OS.SCREEN_ORIENTATION_LANDSCAPE

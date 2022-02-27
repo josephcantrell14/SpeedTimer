@@ -5,6 +5,7 @@ var masterVolume := 100
 var resolution := 100
 var uiOpacity := 100
 var bgTransparency := false
+var alwaysOnTop := false
 var msOpacity := 100
 var metronomeInterval := 0
 var invertedCamera := false
@@ -32,6 +33,7 @@ func getSave() -> void:
             resolution = line.get("resolution",100)
             uiOpacity = line.get("uiOpacity",100)
             bgTransparency = line.get("bgTransparency",false)
+            alwaysOnTop = line.get("alwaysOnTop",false)
             msOpacity = line.get("msOpacity",100)
             metronomeInterval = line.get("metronomeInterval",0)
             invertedCamera = line.get("invertedCamera",false)
@@ -41,6 +43,8 @@ func getSave() -> void:
     _on_UISlider_value_changed(uiOpacity)
     get_tree().get_root().set_transparent_background(bgTransparency)
     $OptionsHUD/Transparency/TransparencyCheckbox.pressed = bgTransparency
+    OS.set_window_always_on_top(alwaysOnTop)
+    $OptionsHUD/AlwaysOnTop/AlwaysOnTopCheckbox.pressed = alwaysOnTop
     _on_MSSlider_value_changed(msOpacity)
     _on_MetronomeSlider_value_changed(metronomeInterval)
     if get_parent().function == 0:
@@ -59,6 +63,7 @@ func setSave() -> void:
         "resolution" : resolution,
         "uiOpacity" : uiOpacity,
         "bgTransparency" : bgTransparency,
+        "alwaysOnTop" : alwaysOnTop,
         "msOpacity" : msOpacity,
         "metronomeInterval" : metronomeInterval,
         "invertedCamera" : invertedCamera,
@@ -114,8 +119,6 @@ func _on_MSSlider_value_changed(value:float) -> void:
         Engine.target_fps = 1
     else:
         Engine.target_fps = 28
-func _on_FullscreenCheckbox_pressed() -> void:
-    OS.window_fullscreen = not OS.window_fullscreen
 func _on_ThemeButton_pressed() -> void:
     $OptionsHUD/ThemeColorPicker.visible = not $OptionsHUD/ThemeColorPicker.visible
 func _on_ThemeColorPicker_color_changed(color:Color) -> void:
@@ -156,7 +159,13 @@ func _on_MetronomeFile_file_selected(path:String) -> void:
     get_parent().get_node("Stopwatch/MetronomeSound").set_stream(audioLoader.loadfile(path))
     if path.ends_with(".wav"):
         get_parent().get_node("Stopwatch/MetronomeSound").stream.loop_mode = 0
+func _on_FullscreenCheckbox_pressed() -> void:
+    OS.window_fullscreen = not OS.window_fullscreen
 func _on_TransparencyCheckbox_pressed() -> void:
     bgTransparency = not bgTransparency
     get_tree().get_root().set_transparent_background(bgTransparency)
+    setSave()
+func _on_AlwaysOnTopCheckbox_pressed() -> void:
+    alwaysOnTop = not alwaysOnTop
+    OS.set_window_always_on_top(alwaysOnTop)
     setSave()
