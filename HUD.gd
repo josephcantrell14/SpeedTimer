@@ -4,14 +4,16 @@ var themeColor := Color(1,1,1,1)
 var masterVolume := 100
 var resolution := 100
 var uiOpacity := 100
+var bgTransparency := false
 var msOpacity := 100
 var metronomeInterval := 0
 var invertedCamera := false
 
 func _ready() -> void:
     getSave()
-func _on_StartButton_pressed() -> void:
-    $StartButton.hide()
+func _input(event):
+    if Input.is_action_just_pressed("timer"):
+        get_parent()._on_StartButton_pressed()
 func _on_QuitButton_pressed() -> void:
     get_tree().quit()
 func getSave() -> void:
@@ -29,6 +31,7 @@ func getSave() -> void:
             masterVolume = line.get("masterVolume",100)
             resolution = line.get("resolution",100)
             uiOpacity = line.get("uiOpacity",100)
+            bgTransparency = line.get("bgTransparency",false)
             msOpacity = line.get("msOpacity",100)
             metronomeInterval = line.get("metronomeInterval",0)
             invertedCamera = line.get("invertedCamera",false)
@@ -36,6 +39,8 @@ func getSave() -> void:
     _on_VolumeSlider_value_changed(masterVolume)
     _on_ResolutionSlider_value_changed(resolution)
     _on_UISlider_value_changed(uiOpacity)
+    get_tree().get_root().set_transparent_background(bgTransparency)
+    $OptionsHUD/Transparency/TransparencyCheckbox.pressed = bgTransparency
     _on_MSSlider_value_changed(msOpacity)
     _on_MetronomeSlider_value_changed(metronomeInterval)
     if get_parent().function == 0:
@@ -54,6 +59,7 @@ func setSave() -> void:
         "masterVolume" : masterVolume,
         "resolution" : resolution,
         "uiOpacity" : uiOpacity,
+        "bgTransparency" : bgTransparency,
         "msOpacity" : msOpacity,
         "metronomeInterval" : metronomeInterval,
         "invertedCamera" : invertedCamera,
@@ -111,18 +117,6 @@ func _on_MSSlider_value_changed(value:float) -> void:
         Engine.target_fps = 28
 func _on_FullscreenCheckbox_pressed() -> void:
     OS.window_fullscreen = not OS.window_fullscreen
-func _on_CheckboxCameraRotate_toggled(button_pressed: bool) -> void:
-    invertedCamera = button_pressed
-    if button_pressed:
-        get_parent().get_node("Player/Camera").rotating = true
-        get_parent().get_node("Player/Camera").scale.x = -1
-        get_parent().get_node("Player/Camera").zoom.y = -1
-        #get_parent().get_node("Player").cameraFlipped = true
-    else:
-        get_parent().get_node("Player/Camera").scale.x = 1
-        get_parent().get_node("Player/Camera").zoom.y = 1
-        get_parent().get_node("Player/Camera").rotating = false
-        #get_parent().get_node("Player").cameraFlipped = false
 func _on_ThemeButton_pressed() -> void:
     $OptionsHUD/ThemeColorPicker.visible = not $OptionsHUD/ThemeColorPicker.visible
 func _on_ThemeColorPicker_color_changed(color:Color) -> void:
@@ -141,11 +135,29 @@ func _on_MetronomeSlider_value_changed(value:float) -> void:
     metronomeInterval = value
     $OptionsHUD/MetronomeSlider.value = value
     $OptionsHUD/MetronomeValue.text = str(value) + " s"
+func _on_CustomAlarmButton_pressed() -> void:
+    if not $OptionsHUD/FileDialogs/AlarmFile.visible:
+        $OptionsHUD/FileDialogs/AlarmFile.current_dir = OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS)
+        $OptionsHUD/FileDialogs/AlarmFile.show()
+        $OptionsHUD/FileDialogs/AlarmFile.popup()
+func _on_AlarmFile_file_selected(path: String) -> void:
+    var audio = AudioStreamPlayer.new()
+    var audioLoader = AudioLoader.new()
+    get_parent().get_node("TimerSound").set_stream(audioLoader.loadfile(path))
+    if path.ends_with(".wav"):
+        get_parent().get_node("TimerSound").stream.loop_mode = 0
 func _on_CustomMetronomeButton_pressed() -> void:
-    $OptionsHUD/MetronomeFile.current_dir = OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS)
-    $OptionsHUD/MetronomeFile.visible = not $OptionsHUD/MetronomeFile.visible
-    $OptionsHUD/MetronomeFile.popup()
-func _on_CustomSoundButton_pressed() -> void:
-    pass # Replace with function body.
-func _on_MetronomeFile_file_selected(path: String) -> void:
-    var a = 0
+    if not $OptionsHUD/FileDialogs/MetronomeFile.visible:
+        $OptionsHUD/FileDialogs/MetronomeFile.current_dir = OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS)
+        $OptionsHUD/FileDialogs/MetronomeFile.show()
+        $OptionsHUD/FileDialogs/MetronomeFile.popup()
+func _on_MetronomeFile_file_selected(path:String) -> void:
+    var audio = AudioStreamPlayer.new()
+    var audioLoader = AudioLoader.new()
+    get_parent().get_node("Stopwatch/MetronomeSound").set_stream(audioLoader.loadfile(path))
+    if path.ends_with(".wav"):
+        get_parent().get_node("Stopwatch/MetronomeSound").stream.loop_mode = 0
+func _on_TransparencyCheckbox_pressed() -> void:
+    bgTransparency = not bgTransparency
+    get_tree().get_root().set_transparent_background(bgTransparency)
+    setSave()

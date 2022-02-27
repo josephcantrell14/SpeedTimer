@@ -26,6 +26,7 @@ func _process(_delta:float) -> void:
     if $HUD.msOpacity != 0:
         $HUD/Milliseconds.text = str(timeLeft-timeLeftRounded).substr(2,3)
 func _on_StartButton_pressed() -> void:
+    $TimerSound.stop()
     for lineEdit in get_tree().get_nodes_in_group("time"):
         lineEdit.release_focus()
         lineEdit.deselect()
@@ -55,6 +56,8 @@ func _on_Timer_timeout() -> void:
     _on_ClearButton_pressed()
 func finishTimer() -> void:
     set_process(false)
+    $HUD/StartButton.icon = preload("res://Sprites/Icons/play.png")
+func _on_TimerSound_finished() -> void:
     $HUD/StartButton.icon = preload("res://Sprites/Icons/play.png")
 func stopwatch() -> void:
     if not $Stopwatch.active:
@@ -117,5 +120,3 @@ func _on_RotationCheckbox_toggled(button_pressed:bool) -> void:
         OS.screen_orientation = OS.SCREEN_ORIENTATION_PORTRAIT
     else:
         OS.screen_orientation = OS.SCREEN_ORIENTATION_LANDSCAPE
-func _on_CustomSoundButton_pressed() -> void:
-    pass # Replace with function body.

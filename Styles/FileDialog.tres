@@ -1,0 +1,132 @@
+[gd_resource type="Theme" load_steps=14 format=2]
+
+[ext_resource path="res://Fonts/roboto.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Styles/ButtonNormal.tres" type="StyleBox" id=2]
+
+[sub_resource type="DynamicFont" id=34]
+size = 24
+use_mipmaps = true
+use_filter = true
+extra_spacing_top = 5
+extra_spacing_bottom = 6
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=35]
+size = 22
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=36]
+size = 18
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=49]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=50]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="DynamicFont" id=39]
+size = 18
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=40]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=41]
+bg_color = Color( 0.160784, 0.160784, 0.160784, 1 )
+
+[sub_resource type="ImageTexture" id=51]
+
+[sub_resource type="ImageTexture" id=52]
+
+[sub_resource type="StyleBoxFlat" id=42]
+bg_color = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
+
+[resource]
+Button/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = SubResource( 34 )
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = null
+Button/styles/normal = ExtResource( 2 )
+Button/styles/pressed = null
+Label/colors/font_color = Color( 1, 1, 1, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+Label/constants/line_spacing = 3
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/fonts/font = SubResource( 35 )
+Label/styles/normal = null
+LineEdit/colors/clear_button_color = Color( 0.88, 0.88, 0.88, 1 )
+LineEdit/colors/clear_button_color_pressed = Color( 1, 1, 1, 1 )
+LineEdit/colors/cursor_color = Color( 0.94, 0.94, 0.94, 1 )
+LineEdit/colors/font_color = Color( 0.898039, 0.898039, 0.898039, 1 )
+LineEdit/colors/font_color_selected = Color( 0, 0, 0, 1 )
+LineEdit/colors/font_color_uneditable = Color( 0.88, 0.88, 0.88, 0.5 )
+LineEdit/colors/selection_color = Color( 0.49, 0.49, 0.49, 1 )
+LineEdit/constants/minimum_spaces = 12
+LineEdit/fonts/font = SubResource( 36 )
+LineEdit/icons/clear = null
+LineEdit/styles/focus = SubResource( 49 )
+LineEdit/styles/normal = SubResource( 50 )
+LineEdit/styles/read_only = null
+Tree/colors/custom_button_font_highlight = Color( 0.94, 0.94, 0.94, 1 )
+Tree/colors/drop_position_color = Color( 1, 0.3, 0.2, 1 )
+Tree/colors/font_color = Color( 0.69, 0.69, 0.69, 1 )
+Tree/colors/font_color_selected = Color( 1, 1, 1, 1 )
+Tree/colors/guide_color = Color( 0, 0, 0, 0.1 )
+Tree/colors/relationship_line_color = Color( 0.27, 0.27, 0.27, 1 )
+Tree/colors/title_button_color = Color( 0.88, 0.88, 0.88, 1 )
+Tree/constants/button_margin = 4
+Tree/constants/draw_guides = 1
+Tree/constants/draw_relationship_lines = 0
+Tree/constants/hseparation = 4
+Tree/constants/item_margin = 12
+Tree/constants/scroll_border = 4
+Tree/constants/scroll_speed = 12
+Tree/constants/vseparation = 4
+Tree/fonts/font = SubResource( 39 )
+Tree/fonts/title_button_font = null
+Tree/icons/arrow = null
+Tree/icons/arrow_collapsed = null
+Tree/icons/checked = null
+Tree/icons/select_arrow = null
+Tree/icons/unchecked = null
+Tree/icons/updown = null
+Tree/styles/bg = SubResource( 40 )
+Tree/styles/bg_focus = null
+Tree/styles/button_pressed = null
+Tree/styles/cursor = null
+Tree/styles/cursor_unfocused = null
+Tree/styles/custom_button = null
+Tree/styles/custom_button_hover = null
+Tree/styles/custom_button_pressed = null
+Tree/styles/selected = SubResource( 41 )
+Tree/styles/selected_focus = null
+Tree/styles/title_button_hover = null
+Tree/styles/title_button_normal = null
+Tree/styles/title_button_pressed = null
+WindowDialog/colors/title_color = Color( 0, 0, 0, 1 )
+WindowDialog/constants/close_h_ofs = 18
+WindowDialog/constants/close_v_ofs = 18
+WindowDialog/constants/scaleborder_size = 4
+WindowDialog/constants/title_height = 20
+WindowDialog/fonts/title_font = null
+WindowDialog/icons/close = SubResource( 51 )
+WindowDialog/icons/close_highlight = SubResource( 52 )
+WindowDialog/styles/panel = SubResource( 42 )

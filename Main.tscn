@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://HUD.gd" type="Script" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Fonts/roboto.ttf" type="DynamicFontData" id=11]
 [ext_resource path="res://Sounds/metronome.wav" type="AudioStream" id=12]
 [ext_resource path="res://Sounds/piano-slow-high.wav" type="AudioStream" id=13]
+[ext_resource path="res://Styles/FileDialog.tres" type="Theme" id=14]
 
 [sub_resource type="DynamicFont" id=1]
 size = 90
@@ -114,15 +115,6 @@ border_width_bottom = 8
 border_color = Color( 0.866667, 0.866667, 0.866667, 1 )
 corner_detail = 1
 
-[sub_resource type="StyleBoxFlat" id=20]
-bg_color = Color( 0.0313726, 0.0313726, 0.0666667, 1 )
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color( 1, 1, 1, 1 )
-corner_detail = 1
-
 [sub_resource type="StyleBoxFlat" id=21]
 bg_color = Color( 1, 1, 1, 1 )
 border_color = Color( 0.898039, 0.0196078, 0.0196078, 1 )
@@ -170,130 +162,6 @@ font_data = ExtResource( 11 )
 
 [sub_resource type="Theme" id=33]
 default_font = SubResource( 32 )
-
-[sub_resource type="DynamicFont" id=34]
-size = 24
-use_mipmaps = true
-use_filter = true
-extra_spacing_top = 5
-extra_spacing_bottom = 6
-font_data = ExtResource( 11 )
-
-[sub_resource type="DynamicFont" id=35]
-size = 22
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 11 )
-
-[sub_resource type="DynamicFont" id=36]
-size = 18
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 11 )
-
-[sub_resource type="StyleBoxFlat" id=49]
-bg_color = Color( 0, 0, 0, 1 )
-
-[sub_resource type="StyleBoxFlat" id=50]
-bg_color = Color( 0, 0, 0, 1 )
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color( 1, 1, 1, 1 )
-
-[sub_resource type="DynamicFont" id=39]
-size = 18
-font_data = ExtResource( 11 )
-
-[sub_resource type="StyleBoxFlat" id=40]
-bg_color = Color( 0, 0, 0, 1 )
-
-[sub_resource type="StyleBoxFlat" id=41]
-bg_color = Color( 0.160784, 0.160784, 0.160784, 1 )
-
-[sub_resource type="StyleBoxFlat" id=42]
-bg_color = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
-
-[sub_resource type="Theme" id=51]
-Button/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
-Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
-Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
-Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
-Button/constants/hseparation = 2
-Button/fonts/font = SubResource( 34 )
-Button/styles/disabled = null
-Button/styles/focus = null
-Button/styles/hover = null
-Button/styles/normal = ExtResource( 9 )
-Button/styles/pressed = null
-Label/colors/font_color = Color( 1, 1, 1, 1 )
-Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
-Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-Label/constants/line_spacing = 3
-Label/constants/shadow_as_outline = 0
-Label/constants/shadow_offset_x = 1
-Label/constants/shadow_offset_y = 1
-Label/fonts/font = SubResource( 35 )
-Label/styles/normal = null
-LineEdit/colors/clear_button_color = Color( 0.88, 0.88, 0.88, 1 )
-LineEdit/colors/clear_button_color_pressed = Color( 1, 1, 1, 1 )
-LineEdit/colors/cursor_color = Color( 0.94, 0.94, 0.94, 1 )
-LineEdit/colors/font_color = Color( 0.898039, 0.898039, 0.898039, 1 )
-LineEdit/colors/font_color_selected = Color( 0, 0, 0, 1 )
-LineEdit/colors/font_color_uneditable = Color( 0.88, 0.88, 0.88, 0.5 )
-LineEdit/colors/selection_color = Color( 0.49, 0.49, 0.49, 1 )
-LineEdit/constants/minimum_spaces = 12
-LineEdit/fonts/font = SubResource( 36 )
-LineEdit/icons/clear = null
-LineEdit/styles/focus = SubResource( 49 )
-LineEdit/styles/normal = SubResource( 50 )
-LineEdit/styles/read_only = null
-Tree/colors/custom_button_font_highlight = Color( 0.94, 0.94, 0.94, 1 )
-Tree/colors/drop_position_color = Color( 1, 0.3, 0.2, 1 )
-Tree/colors/font_color = Color( 0.69, 0.69, 0.69, 1 )
-Tree/colors/font_color_selected = Color( 1, 1, 1, 1 )
-Tree/colors/guide_color = Color( 0, 0, 0, 0.1 )
-Tree/colors/relationship_line_color = Color( 0.27, 0.27, 0.27, 1 )
-Tree/colors/title_button_color = Color( 0.88, 0.88, 0.88, 1 )
-Tree/constants/button_margin = 4
-Tree/constants/draw_guides = 1
-Tree/constants/draw_relationship_lines = 0
-Tree/constants/hseparation = 4
-Tree/constants/item_margin = 12
-Tree/constants/scroll_border = 4
-Tree/constants/scroll_speed = 12
-Tree/constants/vseparation = 4
-Tree/fonts/font = SubResource( 39 )
-Tree/fonts/title_button_font = null
-Tree/icons/arrow = null
-Tree/icons/arrow_collapsed = null
-Tree/icons/checked = null
-Tree/icons/select_arrow = null
-Tree/icons/unchecked = null
-Tree/icons/updown = null
-Tree/styles/bg = SubResource( 40 )
-Tree/styles/bg_focus = null
-Tree/styles/button_pressed = null
-Tree/styles/cursor = null
-Tree/styles/cursor_unfocused = null
-Tree/styles/custom_button = null
-Tree/styles/custom_button_hover = null
-Tree/styles/custom_button_pressed = null
-Tree/styles/selected = SubResource( 41 )
-Tree/styles/selected_focus = null
-Tree/styles/title_button_hover = null
-Tree/styles/title_button_normal = null
-Tree/styles/title_button_pressed = null
-WindowDialog/colors/title_color = Color( 0, 0, 0, 1 )
-WindowDialog/constants/close_h_ofs = 18
-WindowDialog/constants/close_v_ofs = 18
-WindowDialog/constants/scaleborder_size = 4
-WindowDialog/constants/title_height = 20
-WindowDialog/fonts/title_font = null
-WindowDialog/icons/close = null
-WindowDialog/icons/close_highlight = null
-WindowDialog/styles/panel = SubResource( 42 )
 
 [sub_resource type="ImageTexture" id=44]
 
@@ -606,15 +474,11 @@ pause_mode = 2
 visible = false
 z_index = 3
 
-[node name="Background" type="Button" parent="HUD/OptionsHUD" groups=["theme"]]
+[node name="BG" type="ColorRect" parent="HUD/OptionsHUD" groups=["theme"]]
 pause_mode = 2
 margin_right = 1920.0
 margin_bottom = 1080.0
-custom_styles/disabled = SubResource( 20 )
-disabled = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+color = Color( 0, 0, 0, 1 )
 
 [node name="GeneralClose" parent="HUD/OptionsHUD" groups=["theme"] instance=ExtResource( 7 )]
 margin_left = 1732.04
@@ -856,36 +720,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ThemeColorPicker" type="Area2D" parent="HUD/OptionsHUD"]
-visible = false
-position = Vector2( 33.2155, -12.8364 )
-z_index = 2
-
-[node name="BG" type="ColorRect" parent="HUD/OptionsHUD/ThemeColorPicker"]
-margin_left = 53.7145
-margin_top = 91.7145
-margin_right = 773.714
-margin_bottom = 903.714
-color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ThemeColorPicker" type="ColorPicker" parent="HUD/OptionsHUD/ThemeColorPicker"]
-margin_left = 99.0
-margin_top = 143.0
-margin_right = 775.0
-margin_bottom = 915.0
-theme = SubResource( 33 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ThemeButton" type="Button" parent="HUD/OptionsHUD" groups=["theme"]]
-margin_left = 888.0
-margin_top = 775.21
-margin_right = 1200.0
-margin_bottom = 894.21
+[node name="CustomAlarmButton" type="Button" parent="HUD/OptionsHUD" groups=["theme"]]
+margin_left = 246.0
+margin_top = 775.0
+margin_right = 558.0
+margin_bottom = 893.997
 focus_neighbour_left = NodePath("../CustomButton")
 focus_neighbour_top = NodePath("../InstructionsButton")
 focus_neighbour_right = NodePath("../CustomButton")
@@ -897,17 +736,13 @@ custom_fonts/font = SubResource( 13 )
 custom_styles/hover = SubResource( 10 )
 custom_styles/pressed = SubResource( 11 )
 custom_styles/normal = ExtResource( 9 )
-text = "Theme"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+text = "Alarm"
 
 [node name="CustomMetronomeButton" type="Button" parent="HUD/OptionsHUD" groups=["theme"]]
-visible = false
-margin_left = 537.185
-margin_top = 926.013
-margin_right = 849.185
-margin_bottom = 1045.01
+margin_left = 596.0
+margin_top = 775.0
+margin_right = 910.185
+margin_bottom = 893.997
 focus_neighbour_left = NodePath("../CustomButton")
 focus_neighbour_top = NodePath("../InstructionsButton")
 focus_neighbour_right = NodePath("../CustomButton")
@@ -920,34 +755,12 @@ custom_styles/hover = SubResource( 10 )
 custom_styles/pressed = SubResource( 11 )
 custom_styles/normal = ExtResource( 9 )
 text = "Metronome"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="MetronomeFile" type="FileDialog" parent="HUD/OptionsHUD" groups=["theme"]]
-margin_left = 71.0
-margin_top = 50.0
-margin_right = 877.0
-margin_bottom = 924.0
-theme = SubResource( 51 )
-popup_exclusive = true
-window_title = "Select a Metronome Sound File"
-resizable = true
-mode = 0
-access = 2
-filters = PoolStringArray( ".wav", ".mp3" )
-current_dir = "/Users/josep/Documents/GitHub/SpeedTimer"
-current_path = "/Users/josep/Documents/GitHub/SpeedTimer/"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CustomSoundButton" type="Button" parent="HUD/OptionsHUD" groups=["theme"]]
-visible = false
-margin_left = 888.0
-margin_top = 926.013
-margin_right = 1200.0
-margin_bottom = 1045.01
+[node name="ThemeButton" type="Button" parent="HUD/OptionsHUD" groups=["theme"]]
+margin_left = 946.0
+margin_top = 775.0
+margin_right = 1258.0
+margin_bottom = 894.0
 focus_neighbour_left = NodePath("../CustomButton")
 focus_neighbour_top = NodePath("../InstructionsButton")
 focus_neighbour_right = NodePath("../CustomButton")
@@ -959,7 +772,59 @@ custom_fonts/font = SubResource( 13 )
 custom_styles/hover = SubResource( 10 )
 custom_styles/pressed = SubResource( 11 )
 custom_styles/normal = ExtResource( 9 )
-text = "Timer Sound"
+text = "Theme"
+
+[node name="FileDialogs" type="CanvasLayer" parent="HUD/OptionsHUD"]
+layer = 2
+
+[node name="AlarmFile" type="FileDialog" parent="HUD/OptionsHUD/FileDialogs"]
+margin_left = 561.0
+margin_top = 5.0
+margin_right = 1554.0
+margin_bottom = 1015.0
+theme = ExtResource( 14 )
+popup_exclusive = true
+window_title = "Import .mp3 And .wav Files for Alarm"
+mode_overrides_title = false
+mode = 0
+access = 2
+filters = PoolStringArray( "*mp3", "*.wav" )
+current_dir = "/Users/josep/Documents/GitHub/SpeedTimer"
+current_path = "/Users/josep/Documents/GitHub/SpeedTimer/"
+
+[node name="MetronomeFile" type="FileDialog" parent="HUD/OptionsHUD/FileDialogs"]
+margin_left = 925.0
+margin_top = 1.0
+margin_right = 1918.0
+margin_bottom = 1034.0
+theme = ExtResource( 14 )
+popup_exclusive = true
+window_title = "Import .mp3 And .wav Files for Metronome"
+mode_overrides_title = false
+mode = 0
+access = 2
+filters = PoolStringArray( "*mp3", "*.wav" )
+current_dir = "/Users/josep/Documents/GitHub/SpeedTimer"
+current_path = "/Users/josep/Documents/GitHub/SpeedTimer/"
+
+[node name="ThemeColorPicker" type="Area2D" parent="HUD/OptionsHUD"]
+visible = false
+position = Vector2( 140, 10 )
+z_index = 2
+
+[node name="BG" type="ColorRect" parent="HUD/OptionsHUD/ThemeColorPicker"]
+margin_left = 86.0
+margin_top = 127.0
+margin_right = 806.0
+margin_bottom = 939.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="ThemeColorPicker" type="ColorPicker" parent="HUD/OptionsHUD/ThemeColorPicker"]
+margin_left = 123.0
+margin_top = 167.0
+margin_right = 799.0
+margin_bottom = 939.0
+theme = SubResource( 33 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1005,35 +870,27 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Rotation" type="Area2D" parent="HUD/OptionsHUD" groups=["theme"]]
-visible = false
-position = Vector2( 890.885, -10.6474 )
+[node name="Transparency" type="Area2D" parent="HUD/OptionsHUD" groups=["theme"]]
+position = Vector2( 890.885, 53 )
 
-[node name="Label" type="Label" parent="HUD/OptionsHUD/Rotation"]
+[node name="Label" type="Label" parent="HUD/OptionsHUD/Transparency"]
 margin_left = 114.602
 margin_top = 906.888
 margin_right = 759.601
 margin_bottom = 1002.89
 custom_colors/font_color = Color( 0.898039, 0.898039, 0.898039, 1 )
 custom_fonts/font = SubResource( 29 )
-text = "Portrait"
+text = "Transparency"
 align = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="CheckboxBG" type="TextureRect" parent="HUD/OptionsHUD/Rotation"]
+[node name="CheckboxBG" type="TextureRect" parent="HUD/OptionsHUD/Transparency"]
 margin_left = 777.702
 margin_top = 868.224
 margin_right = 927.702
 margin_bottom = 1018.22
 texture = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="RotationCheckbox" type="CheckBox" parent="HUD/OptionsHUD/Rotation"]
-visible = false
+[node name="TransparencyCheckbox" type="CheckBox" parent="HUD/OptionsHUD/Transparency"]
 margin_left = 804.29
 margin_top = 891.521
 margin_right = 904.29
@@ -1044,12 +901,12 @@ custom_icons/checked = SubResource( 45 )
 custom_icons/radio_unchecked = SubResource( 46 )
 custom_icons/unchecked = SubResource( 47 )
 custom_styles/pressed = SubResource( 48 )
-pressed = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="finished" from="TimerSound" to="." method="_on_TimerSound_finished"]
 [connection signal="input_event" from="HUD/BG" to="." method="_on_Background_input_event"]
 [connection signal="gui_input" from="HUD/Hours" to="." method="_on_Hours_gui_input"]
 [connection signal="gui_input" from="HUD/Minutes" to="." method="_on_Minutes_gui_input"]
@@ -1067,11 +924,11 @@ __meta__ = {
 [connection signal="value_changed" from="HUD/OptionsHUD/UISlider" to="HUD" method="_on_UISlider_value_changed"]
 [connection signal="value_changed" from="HUD/OptionsHUD/MSSlider" to="HUD" method="_on_MSSlider_value_changed"]
 [connection signal="value_changed" from="HUD/OptionsHUD/MetronomeSlider" to="HUD" method="_on_MetronomeSlider_value_changed"]
-[connection signal="color_changed" from="HUD/OptionsHUD/ThemeColorPicker/ThemeColorPicker" to="HUD" method="_on_ThemeColorPicker_color_changed"]
-[connection signal="pressed" from="HUD/OptionsHUD/ThemeButton" to="HUD" method="_on_ThemeButton_pressed"]
+[connection signal="pressed" from="HUD/OptionsHUD/CustomAlarmButton" to="HUD" method="_on_CustomAlarmButton_pressed"]
 [connection signal="pressed" from="HUD/OptionsHUD/CustomMetronomeButton" to="HUD" method="_on_CustomMetronomeButton_pressed"]
-[connection signal="file_selected" from="HUD/OptionsHUD/MetronomeFile" to="HUD" method="_on_MetronomeFile_file_selected"]
-[connection signal="pressed" from="HUD/OptionsHUD/CustomSoundButton" to="HUD" method="_on_CustomSoundButton_pressed"]
+[connection signal="pressed" from="HUD/OptionsHUD/ThemeButton" to="HUD" method="_on_ThemeButton_pressed"]
+[connection signal="file_selected" from="HUD/OptionsHUD/FileDialogs/AlarmFile" to="HUD" method="_on_AlarmFile_file_selected"]
+[connection signal="file_selected" from="HUD/OptionsHUD/FileDialogs/MetronomeFile" to="HUD" method="_on_MetronomeFile_file_selected"]
+[connection signal="color_changed" from="HUD/OptionsHUD/ThemeColorPicker/ThemeColorPicker" to="HUD" method="_on_ThemeColorPicker_color_changed"]
 [connection signal="pressed" from="HUD/OptionsHUD/Fullscreen/FullscreenCheckbox" to="HUD" method="_on_FullscreenCheckbox_pressed"]
-[connection signal="pressed" from="HUD/OptionsHUD/Rotation/RotationCheckbox" to="." method="_on_RotationCheckbox_pressed"]
-[connection signal="toggled" from="HUD/OptionsHUD/Rotation/RotationCheckbox" to="." method="_on_RotationCheckbox_toggled"]
+[connection signal="pressed" from="HUD/OptionsHUD/Transparency/TransparencyCheckbox" to="HUD" method="_on_TransparencyCheckbox_pressed"]
