@@ -223,7 +223,7 @@ z_index = -1
 [node name="Sprite" type="Sprite" parent="HUD/BG"]
 position = Vector2( 956.595, 539.523 )
 
-[node name="Hours" type="LineEdit" parent="HUD" groups=["theme", "time"]]
+[node name="Hours" type="LineEdit" parent="HUD" groups=["theme", "time", "uiShiftUp"]]
 margin_left = 474.0
 margin_top = 378.0
 margin_right = 1074.0
@@ -239,7 +239,7 @@ custom_styles/normal = SubResource( 3 )
 text = "0"
 max_length = 2
 
-[node name="Minutes" type="LineEdit" parent="HUD" groups=["theme", "time"]]
+[node name="Minutes" type="LineEdit" parent="HUD" groups=["theme", "time", "uiShiftUp"]]
 margin_left = 774.364
 margin_top = 378.142
 margin_right = 1374.36
@@ -258,7 +258,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Seconds" type="LineEdit" parent="HUD" groups=["theme", "time"]]
+[node name="Seconds" type="LineEdit" parent="HUD" groups=["theme", "time", "uiShiftUp"]]
 margin_left = 1074.0
 margin_top = 378.0
 margin_right = 1674.0
@@ -277,7 +277,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Milliseconds" type="LineEdit" parent="HUD" groups=["theme", "time"]]
+[node name="Milliseconds" type="LineEdit" parent="HUD" groups=["theme", "time", "uiShiftUp"]]
 margin_left = 1374.36
 margin_top = 378.142
 margin_right = 1974.36
@@ -298,7 +298,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="h" type="Label" parent="HUD" groups=["theme"]]
+[node name="h" type="Label" parent="HUD" groups=["theme", "uiShiftUp"]]
 margin_left = 489.152
 margin_top = 574.113
 margin_right = 567.152
@@ -313,7 +313,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="m" type="Label" parent="HUD" groups=["theme"]]
+[node name="m" type="Label" parent="HUD" groups=["theme", "uiShiftUp"]]
 margin_left = 791.211
 margin_top = 574.113
 margin_right = 869.211
@@ -328,7 +328,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="s" type="Label" parent="HUD" groups=["theme"]]
+[node name="s" type="Label" parent="HUD" groups=["theme", "uiShiftUp"]]
 margin_left = 1089.7
 margin_top = 574.113
 margin_right = 1167.7
@@ -343,7 +343,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ms" type="Label" parent="HUD" groups=["theme"]]
+[node name="ms" type="Label" parent="HUD" groups=["theme", "uiShiftUp"]]
 margin_left = 1380.35
 margin_top = 574.0
 margin_right = 1498.35
@@ -358,7 +358,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Decimal" type="Label" parent="HUD" groups=["theme"]]
+[node name="Decimal" type="Label" parent="HUD" groups=["theme", "uiShiftUp"]]
 margin_left = 1295.23
 margin_top = 456.26
 margin_right = 1373.23
@@ -819,25 +819,22 @@ current_path = "/Users/josep/Documents/GitHub/SpeedTimer/"
 
 [node name="ThemeColorPicker" type="Area2D" parent="HUD/OptionsHUD"]
 visible = false
-position = Vector2( 140, 10 )
+position = Vector2( 99, -89 )
 z_index = 2
 
 [node name="BG" type="ColorRect" parent="HUD/OptionsHUD/ThemeColorPicker"]
-margin_left = 86.0
-margin_top = 127.0
-margin_right = 806.0
-margin_bottom = 939.0
+margin_left = 125.0
+margin_top = 111.0
+margin_right = 845.0
+margin_bottom = 982.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="ThemeColorPicker" type="ColorPicker" parent="HUD/OptionsHUD/ThemeColorPicker"]
-margin_left = 127.0
-margin_top = 171.0
-margin_right = 803.0
-margin_bottom = 943.0
+margin_left = 151.0
+margin_top = 136.0
+margin_right = 827.0
+margin_bottom = 967.0
 theme = SubResource( 33 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Fullscreen" type="Area2D" parent="HUD/OptionsHUD" groups=["theme"]]
 position = Vector2( 890.885, -101.593 )
@@ -950,13 +947,9 @@ custom_styles/pressed = SubResource( 48 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="finished" from="TimerSound" to="." method="_on_TimerSound_finished"]
 [connection signal="input_event" from="HUD/BG" to="." method="_on_Background_input_event"]
-[connection signal="focus_entered" from="HUD/Hours" to="." method="_on_Hours_focus_entered"]
 [connection signal="gui_input" from="HUD/Hours" to="." method="_on_Hours_gui_input"]
-[connection signal="focus_entered" from="HUD/Minutes" to="." method="_on_Minutes_focus_entered"]
 [connection signal="gui_input" from="HUD/Minutes" to="." method="_on_Minutes_gui_input"]
-[connection signal="focus_entered" from="HUD/Seconds" to="." method="_on_Seconds_focus_entered"]
 [connection signal="gui_input" from="HUD/Seconds" to="." method="_on_Seconds_gui_input"]
-[connection signal="focus_entered" from="HUD/Milliseconds" to="." method="_on_Milliseconds_focus_entered"]
 [connection signal="gui_input" from="HUD/Milliseconds" to="." method="_on_Milliseconds_gui_input"]
 [connection signal="pressed" from="HUD/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="HUD/TimerButton" to="." method="_on_TimerButton_pressed"]

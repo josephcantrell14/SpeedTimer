@@ -7,6 +7,8 @@ var input := 0 #keyboard,touch,controller
 func _ready() -> void:
     if OS.has_touchscreen_ui_hint():
         input = 1
+        for node in get_tree().get_nodes_in_group("uiShiftUp"):  #mobile landscape editing
+            node.rect_position.y -= 100
     else:
         input = 0
         OS.set_window_size(Vector2(1280,720))
@@ -70,42 +72,34 @@ func finishStopwatch() -> void:
     $Stopwatch.end()
     $HUD/StartButton.icon = preload("res://Sprites/Icons/play.png")
     $HUD/ClearButton.show()
-func _on_Hours_focus_entered() -> void:
-    $HUD/Hours.select_all()
-func _on_Minutes_focus_entered() -> void:
-    $HUD/Minutes.select_all()
-func _on_Seconds_focus_entered() -> void:
-    $HUD/Seconds.select_all()
-func _on_Milliseconds_focus_entered() -> void:
-    $HUD/Milliseconds.select_all()
 func _on_Hours_gui_input(event: InputEvent) -> void:
     if input == 1 and (event is InputEventMouseButton or event is InputEventScreenTouch):
         $HUD/Hours.select_all()
         $HUD/Minutes.deselect()
         $HUD/Seconds.deselect()
         $HUD/Milliseconds.deselect()
-        OS.show_virtual_keyboard()
+        #OS.show_virtual_keyboard()
 func _on_Minutes_gui_input(event: InputEvent) -> void:
     if input == 1 and (event is InputEventMouseButton or event is InputEventScreenTouch):
         $HUD/Minutes.select_all()
         $HUD/Hours.deselect()
         $HUD/Seconds.deselect()
         $HUD/Milliseconds.deselect()
-        OS.show_virtual_keyboard()
+        #OS.show_virtual_keyboard()
 func _on_Seconds_gui_input(event: InputEvent) -> void:
     if input == 1 and (event is InputEventMouseButton or event is InputEventScreenTouch):
         $HUD/Seconds.select_all()
         $HUD/Hours.deselect()
         $HUD/Minutes.deselect()
         $HUD/Milliseconds.deselect()
-        OS.show_virtual_keyboard()
+        #OS.show_virtual_keyboard()
 func _on_Milliseconds_gui_input(event: InputEvent) -> void:
     if input == 1 and (event is InputEventMouseButton or event is InputEventScreenTouch):
         $HUD/Milliseconds.select_all()
         $HUD/Seconds.deselect()
         $HUD/Hours.deselect()
         $HUD/Minutes.deselect()
-        OS.show_virtual_keyboard() #test
+        #OS.show_virtual_keyboard() #test
 func _on_OptionsButton_pressed() -> void:
     $HUD/OptionsHUD.show()
 func _on_GeneralClose_pressed() -> void:
