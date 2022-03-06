@@ -4,3 +4,5 @@ A free, speedy, and open source timer application made using Godot Engine 3.4.  
 Windows, Android, and Linux builds are on itch.io: https://josephcantrell14.itch.io/speed-timer
 
 An HTML5 version is on my website: https://josephcantrell.org/programs/speed-timer/Speed%20Timer.html
+<br><br><br><br>
+Roboto font: https://fonts.google.com/specimen/Roboto
