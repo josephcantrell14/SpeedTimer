@@ -2,7 +2,8 @@ extends CanvasLayer
 
 var themeColor := Color(1,1,1,1)
 var masterVolume := 100
-var resolution := 100
+var windowResolution := Vector2(1280,720)
+var renderResolution := 100
 var uiOpacity := 100
 var bgTransparency := false
 var alwaysOnTop := false
@@ -12,10 +13,34 @@ var invertedCamera := false
 
 func _ready() -> void:
     getSave()
+    $Hours.append_at_cursor("0")
+    $Minutes.append_at_cursor("0")
+    $Seconds.append_at_cursor("0")
+    $Milliseconds.append_at_cursor("0")
 func _input(event):
     if Input.is_action_just_pressed("timer"):
         get_parent()._on_StartButton_pressed()
+    elif Input.is_action_just_pressed("162p"):
+        setWindowResolution(Vector2(288,162))
+    elif Input.is_action_just_pressed("270p"):
+        setWindowResolution(Vector2(480,270))
+    elif Input.is_action_just_pressed("450p"):
+        setWindowResolution(Vector2(800,450))
+    elif Input.is_action_just_pressed("720p"):
+        setWindowResolution(Vector2(1280,720))
+    elif Input.is_action_just_pressed("1080p"):
+        setWindowResolution(Vector2(1920,1080))
+    elif Input.is_action_just_pressed("1440p"):
+        setWindowResolution(Vector2(2560,1440))
+    elif Input.is_action_just_pressed("2160p"):
+        setWindowResolution(Vector2(3840,2160))
+func setWindowResolution(resolution) -> void:
+    windowResolution = resolution
+    OS.set_window_size(windowResolution)
+    setSave()
 func _on_QuitButton_pressed() -> void:
+    windowResolution = OS.window_size
+    setSave()
     get_tree().quit()
 func getSave() -> void:
     var saveFile = File.new()
@@ -30,7 +55,9 @@ func getSave() -> void:
             themeColor.b = line.get("mapB",1)
             themeColor.a = line.get("mapA",-1)
             masterVolume = line.get("masterVolume",100)
-            resolution = line.get("resolution",100)
+            windowResolution[0] = line.get("windowResolutionX",1920)
+            windowResolution[1] = line.get("windowResolutionY",1080)
+            renderResolution = line.get("renderResolution",100)
             uiOpacity = line.get("uiOpacity",100)
             bgTransparency = line.get("bgTransparency",false)
             alwaysOnTop = line.get("alwaysOnTop",false)
@@ -39,8 +66,10 @@ func getSave() -> void:
             invertedCamera = line.get("invertedCamera",false)
             get_parent().function = line.get("function",0)
     _on_VolumeSlider_value_changed(masterVolume)
-    _on_ResolutionSlider_value_changed(resolution)
+    setWindowResolution(windowResolution)
+    _on_ResolutionSlider_value_changed(renderResolution)
     _on_UISlider_value_changed(uiOpacity)
+    OS.window_per_pixel_transparency_enabled = bgTransparency
     get_tree().get_root().set_transparent_background(bgTransparency)
     $OptionsHUD/Transparency/TransparencyCheckbox.pressed = bgTransparency
     OS.set_window_always_on_top(alwaysOnTop)
@@ -60,7 +89,9 @@ func setSave() -> void:
         "mapB" : themeColor.b,
         "mapA" : themeColor.a,
         "masterVolume" : masterVolume,
-        "resolution" : resolution,
+        "windowResolutionX" : windowResolution[0],
+        "windowResolutionY" : windowResolution[1],
+        "renderResolution" : renderResolution,
         "uiOpacity" : uiOpacity,
         "bgTransparency" : bgTransparency,
         "alwaysOnTop" : alwaysOnTop,
@@ -73,11 +104,12 @@ func setSave() -> void:
     saveFile.open("user://speed-timer.save",File.WRITE)
     saveFile.store_line(to_json(saveData))
     saveFile.close()
-func _on_GeneralOptionsButton_pressed() -> void:
+func _on_OptionsButton_pressed() -> void:
     $OptionsHUD.show()
-func _on_GeneralClose_pressed() -> void:
+func _on_OptionsClose_pressed() -> void:
     $OptionsHUD.hide()
     $OptionsHUD/ThemeColorPicker.hide()
+    windowResolution = OS.window_size
     setSave()
 func _on_VolumeSlider_value_changed(value:float) -> void:
     $OptionsHUD/VolumeValue.text = str(value) + "%"
@@ -93,7 +125,7 @@ func _on_ResolutionSlider_value_changed(value:float) -> void:
     $OptionsHUD/ResolutionValue.text = str(value) + "%"
     $OptionsHUD/ResolutionSlider.value = value
     get_viewport().set_size(Vector2(1920*value/100,1080*value/100))
-    resolution = value
+    renderResolution = value
 func _on_UISlider_value_changed(value:float) -> void:
     uiOpacity = value
     var opacityDec := value/100
@@ -163,9 +195,34 @@ func _on_FullscreenCheckbox_pressed() -> void:
     OS.window_fullscreen = not OS.window_fullscreen
 func _on_TransparencyCheckbox_pressed() -> void:
     bgTransparency = not bgTransparency
+    OS.window_per_pixel_transparency_enabled = bgTransparency
     get_tree().get_root().set_transparent_background(bgTransparency)
     setSave()
 func _on_AlwaysOnTopCheckbox_pressed() -> void:
     alwaysOnTop = not alwaysOnTop
     OS.set_window_always_on_top(alwaysOnTop)
     setSave()
+func _on_Hours_gui_input(event: InputEvent) -> void:
+    if get_parent().input == 1 and (event is InputEventMouseButton or event is InputEventScreenTouch):
+        $Hours.select_all()
+        $Minutes.deselect()
+        $Seconds.deselect()
+        $Milliseconds.deselect()
+func _on_Minutes_gui_input(event: InputEvent) -> void:
+    if get_parent().input == 1 and (event is InputEventMouseButton or event is InputEventScreenTouch):
+        $Minutes.select_all()
+        $Hours.deselect()
+        $Seconds.deselect()
+        $Milliseconds.deselect()
+func _on_Seconds_gui_input(event: InputEvent) -> void:
+     if get_parent().input == 1 and (event is InputEventMouseButton or event is InputEventScreenTouch):
+        $Seconds.select_all()
+        $Hours.deselect()
+        $Minutes.deselect()
+        $Milliseconds.deselect()
+func _on_Milliseconds_gui_input(event: InputEvent) -> void:
+    if get_parent().input == 1 and (event is InputEventMouseButton or event is InputEventScreenTouch):
+        $Milliseconds.select_all()
+        $Seconds.deselect()
+        $Hours.deselect()
+        $Minutes.deselect()
